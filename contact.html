@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — Nathan Finkel</title>
+    <meta name="description" content="Contact Nathan Finkel for bookings, workshops, collaborations, and technical music work." />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header>
+      <div class="container">
+        <div class="nav">
+          <a class="brand" href="index.html" aria-label="Home">
+            <div class="brand-mark" aria-hidden="true"></div>
+            <div class="brand-title">
+              <strong>Nathan Finkel</strong>
+              <span>Music & arts</span>
+            </div>
+          </a>
+
+          <nav class="nav-links" data-nav>
+            <a href="index.html" data-nav-link>Home</a>
+            <a href="music.html" data-nav-link>Music</a>
+            <a href="shows.html" data-nav-link>Shows</a>
+            <a href="contact.html" data-nav-link>Contact</a>
+          </nav>
+
+          <div class="nav-cta">
+            <a class="btn small" href="contact.html">Book / contact</a>
+            <button class="btn small menu-btn" type="button" data-menu aria-expanded="false" aria-label="Open menu">
+              Menu
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="content">
+      <div class="container">
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="card pad">
+              <h1>Contact</h1>
+              <p class="lede">
+                Bookings, workshops, collaborations, and technical music / sound work.
+              </p>
+
+              <div class="section">
+                <h2>Direct</h2>
+                <div class="list">
+                  <div class="item">
+                    <div class="kicker">Email</div>
+                    <h3><a href="mailto:nathanfinkel@gmail.com">nathanfinkel@gmail.com</a></h3>
+                    <p>Fastest way to reach me.</p>
+                  </div>
+                  <div class="item">
+                    <div class="kicker">Website</div>
+                    <h3><a href="https://natecreates.co.uk" target="_blank" rel="noreferrer">natecreates.co.uk</a></h3>
+                    <p>Portfolio and updates.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="card pad">
+              <h2>Send a message</h2>
+              <p class="note">
+                This form is “static” (it won’t submit anywhere yet). If you want a working form, tell me where you host
+                the site and I’ll wire it up (e.g., Formspree / Netlify Forms).
+              </p>
+              <form class="form" action="#" method="post">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" autocomplete="name" placeholder="Your name" />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+                </div>
+                <div class="field">
+                  <label for="msg">Message</label>
+                  <textarea id="msg" name="message" placeholder="A few lines about what you’re looking for..."></textarea>
+                </div>
+                <button class="btn primary" type="button" onclick="alert('This is a static demo form. Email is the best way to reach me.');">
+                  Send (demo)
+                </button>
+              </form>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>What to include</h2>
+          <div class="grid-3">
+            <div class="mini">
+              <h3>For bookings</h3>
+              <p>Date, location, set length, PA situation, and your budget range.</p>
+            </div>
+            <div class="mini">
+              <h3>For workshops</h3>
+              <p>Group size, experience level, time available, and your goal (jam, teaching, performance).</p>
+            </div>
+            <div class="mini">
+              <h3>For tech work</h3>
+              <p>Venue setup, streaming requirements, and any links to tech riders or stage plots.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>© <span data-year></span> Nathan Finkel</div>
+          <div style="display:flex; gap: 12px; flex-wrap: wrap;">
+            <a href="music.html">Music</a>
+            <a href="shows.html">Shows</a>
+            <a href="index.html">Home</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/site.js"></script>
+  </body>
+</html>
+
