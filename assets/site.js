@@ -47,8 +47,6 @@
     };
 
     render();
-    // Update every second so the display always includes seconds (and stays consistent across browsers).
-    setInterval(render, 1000);
   }
 })();
 
