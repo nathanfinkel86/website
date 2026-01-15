@@ -4,6 +4,19 @@
   // Use an ISO timestamp (UTC recommended). Example: "2026-01-15T01:23:45Z"
   const DEPLOY_TIMESTAMP_ISO = "2026-01-15T00:00:00Z";
 
+  const getByPath = (obj, path) => {
+    return path.split('.').reduce((acc, key) => (acc && acc[key] != null ? acc[key] : undefined), obj);
+  };
+
+  const applyCopy = (data) => {
+    document.querySelectorAll('[data-copy]').forEach((el) => {
+      const key = el.getAttribute('data-copy');
+      if (!key) return;
+      const value = getByPath(data, key);
+      if (typeof value === 'string') el.textContent = value;
+    });
+  };
+
   const menuBtn = document.querySelector('[data-menu]');
   const nav = document.querySelector('[data-nav]');
   if (menuBtn && nav) {
@@ -47,6 +60,20 @@
     };
 
     render();
+  }
+
+  // copy (single source of truth): assets/content.json
+  try {
+    const script = document.currentScript || document.querySelector('script[src*="assets/site.js"]');
+    const contentUrl = script?.src ? new URL('content.json', script.src).toString() : 'assets/content.json';
+    fetch(contentUrl)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((json) => {
+        if (json) applyCopy(json);
+      })
+      .catch(() => {});
+  } catch (_) {
+    // no-op: fallback is the hardcoded HTML copy
   }
 })();
 

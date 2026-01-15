@@ -7,6 +7,7 @@
 ## What this is
 - A **simple static website** (no build step): plain HTML + CSS + a tiny JS file.
 - Designed to be **easy to edit** by changing text directly in the `.html` files.
+- Most copy can be edited in one place: **`music-website/assets/content.json`** (elements use `data-copy="..."` keys).
 
 ## Site structure
 - **Home**: `music-website/index.html`
@@ -22,7 +23,7 @@
   - Chips/tags across the site link into these anchors.
   - Each section also links to an **unlisted detail subpage**:
     - `music-website/p/ambient.html`
-    - `music-website/p/rig.html`
+    - `music-website/p/rig.html` (redirects to `p/ambient.html#rig`)
     - `music-website/p/facilitation.html`
     - `music-website/p/glia.html`
     - `music-website/p/morocco.html`

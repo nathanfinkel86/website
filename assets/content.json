@@ -1,0 +1,55 @@
+{
+  "home": {
+    "hero": {
+      "title": "Music, collaboration, and creative tech.",
+      "lede": "Brighton-based musician and music technologist working across live performance, facilitation, and technical production. Ambient/electronic sets with a hybrid analogue/digital rig, plus participatory formats and workshops."
+    },
+    "whatIDo": {
+      "livePerformanceTitle": "Live performance",
+      "livePerformanceBody": "Immersive ambient/electronic sets: found sound, layered textures, melodic guitar.",
+      "facilitationTitle": "Facilitation",
+      "facilitationBody": "Structured jams and workshops that help mixed-ability groups play together quickly.",
+      "creativeSystemsTitle": "Creative systems",
+      "creativeSystemsBody": "Practical integration of software/hardware (DAWs, VSTs, live sound) for performance and events."
+    },
+    "bio": {
+      "p1": "Nathan Finkel is a Brighton-based musician and music technologist working across live performance, facilitation, and technical production. He plays guitar, bass, drums and synths, and makes immersive ambient/electronic sets using a custom hybrid analogue/digital rig—combining found sound, layered textures and melodic guitar.",
+      "p2": "He’s been part of Limmud UK for 20 years and has spent 15 years as an official house band guitarist and workshop leader. That work involves learning material fast, supporting visiting artists across genres, and running structured jam sessions that help mixed-ability groups play together confidently.",
+      "p3": "In 2025 he was Musical Director & Curator of Jam Camp at Borderland (Sweden), coordinating a large-scale improvised performance for the main burn with minimal notice and supporting first-time performers to take part.",
+      "p4": "Nathan also collaborates on Glia, a neural-network instrument environment that runs as a VST in a DAW. He integrates Glia’s rhythm and harmony engines into his live setup for real-time MIDI/audio interaction, and took the system on the road for successful UK shows in December 2025.",
+      "p5": "Alongside this, he’s developing teaching and recording projects, including work connected to Essaouira, Morocco, blending Gnawa rhythms with electronic sound design."
+    }
+  },
+  "projects": {
+    "intro": "A simple map of what I’m working on. The tags across the site link to sections here.",
+    "ambientSummary": "Immersive ambient/electronic sets built around layered textures, found sound, and melodic guitar. Often improvised and shaped to the room.",
+    "rigSummary": "The rig is part of the ambient/electronic project: a hybrid analogue/digital setup designed for reliable routing, fast setup, and live flexibility (including optional Glia + visuals).",
+    "facilitationSummary": "Structured jam sessions that help mixed-ability groups play together quickly. Focus is on listening, rhythm cues, and confidence.",
+    "gliaSummary": "Glia runs as a VST in a DAW. I integrate it with a live rig for real-time MIDI/audio interaction (successful UK shows in Dec 2025).",
+    "moroccoSummary": "Recording direction connected to Essaouira, blending Gnawa rhythms with electronic sound design."
+  },
+  "music": {
+    "intro": "Ambient / electronic performance with a custom hybrid analogue/digital rig: found sound, layered textures, melodic guitar. This page is set up with placeholders—swap in your own links and audio files."
+  },
+  "shows": {
+    "intro": "Add your upcoming dates here. If you don’t have confirmed dates, you can leave “Upcoming” empty and keep “Highlights”."
+  },
+  "contact": {
+    "intro": "Bookings, workshops, collaborations, and technical music / sound work."
+  },
+  "detail": {
+    "ambient": {
+      "lede": "Immersive ambient/electronic sets built around layered textures, found sound, and melodic guitar. Often improvised and shaped to the room."
+    },
+    "glia": {
+      "lede": "Glia is a neural-network instrument environment that runs as a VST in a DAW. I integrate it with a live rig for real-time MIDI/audio interaction, and took it on the road for successful UK shows in December 2025."
+    },
+    "facilitation": {
+      "lede": "Structured jam formats that help mixed-ability groups play together quickly. Focus on listening, rhythm cues, confidence, and simple rules that make collaboration feel easy."
+    },
+    "morocco": {
+      "lede": "Recording direction connected to Essaouira, blending Gnawa rhythms with electronic sound design."
+    }
+  }
+}
+
