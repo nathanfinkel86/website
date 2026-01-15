@@ -441,8 +441,7 @@ input:focus, textarea:focus {
   /* Fix background for tablet/mobile - iOS Safari needs specific handling */
   .hero-background {
     background: url('../Nathan ambient show 1.jpeg') center 30% no-repeat scroll;
-    background-size: contain;
-    background-color: var(--bg);
+    background-size: 150% auto; /* Scale to 150% width, auto height */
     min-height: 100vh;
   }
   
