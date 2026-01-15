@@ -440,7 +440,7 @@ input:focus, textarea:focus {
 
   /* Fix background for tablet/mobile - iOS Safari needs specific handling */
   .hero-background {
-    background: url('../Nathan ambient show 1.jpeg') center top / cover no-repeat scroll;
+    background: url('../Nathan ambient show 1.jpeg') center top / 200% auto no-repeat scroll;
     min-height: 100vh;
   }
   
