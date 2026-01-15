@@ -23,6 +23,7 @@
 
           <nav class="nav-links" data-nav>
             <a href="../index.html" data-nav-link>Home</a>
+            <a href="../about.html" data-nav-link>About</a>
             <a href="../music.html" data-nav-link>Music</a>
             <a href="../projects.html" data-nav-link>Projects</a>
             <a href="../shows.html" data-nav-link>Shows</a>
@@ -44,10 +45,10 @@
         <section class="hero">
           <div class="card pad">
             <p class="note" style="margin: 0 0 8px;"><a href="../projects.html">← Back to Projects</a></p>
-            <h1>Glia (neural-network instrument)</h1>
+            <h1>Glia</h1>
             <p class="lede">
-              Glia runs as a VST in a DAW. I integrate it with a live rig for real-time MIDI/audio interaction 
-              (successful UK shows in Dec 2025).
+              A multiplayer visual programming environment for collaborative music creation. Built on CMajor and JUCE, 
+              it enables real-time collaborative audio graph editing—I took it on the road for successful UK shows in December 2025.
             </p>
             <div style="margin-top: 14px;">
               <a class="btn primary" href="../music.html">Listen / watch</a>
@@ -59,12 +60,34 @@
           <h2>What it is</h2>
           <div class="card pad">
             <p class="lede">
-              Glia is a collaborative project: a neural-network-based instrument environment that runs as a VST plugin. 
-              It has two main engines—Groove (rhythmic) and Harmony (melodic/harmonic)—that respond to live audio and MIDI input.
+              Glia is a collaborative project building infrastructure for collaborative music creation. It's not just a plugin—it's 
+              a complete visual programming environment where multiple users can build and edit audio processing graphs simultaneously.
             </p>
             <p class="lede">
-              I didn't build Glia, but I've integrated it into my performance workflow and taken it on the road for live shows.
+              Think: Google Docs for modular synthesis. Drag-and-drop nodes, real-time code generation, WebSocket synchronization, 
+              and conflict-free collaborative editing via CRDTs. Runs as a VST3/AU plugin, standalone app, or web client.
             </p>
+            <p class="lede">
+              I didn't build Glia, but I'm a contributor and early adopter—integrating it into my performance workflow and stress-testing it in live contexts.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Technical stack</h2>
+          <div class="grid-3">
+            <div class="mini">
+              <h3>CMajor audio engine</h3>
+              <p>High-performance audio DSL compiled to native code or WebAssembly for real-time processing.</p>
+            </div>
+            <div class="mini">
+              <h3>Visual graph editor</h3>
+              <p>React Flow-based interface for building audio graphs—nodes, connections, groups, MIDI mappings.</p>
+            </div>
+            <div class="mini">
+              <h3>Real-time collaboration</h3>
+              <p>Yjs CRDTs enable conflict-free simultaneous editing. Cursor tracking, viewport sync, offline-capable.</p>
+            </div>
           </div>
         </section>
 
@@ -72,16 +95,16 @@
           <h2>How I use it</h2>
           <div class="grid-3">
             <div class="mini">
-              <h3>Real-time MIDI/audio</h3>
-              <p>Groove Engine responds to audio input; Harmony Engine modulates/arpeggiates MIDI input from keys/synth.</p>
+              <h3>Live performance</h3>
+              <p>Runs as a VST3 in Ableton Live—custom audio graphs responding to MIDI controllers and audio input.</p>
             </div>
             <div class="mini">
-              <h3>Live integration</h3>
-              <p>Runs in Ableton Live alongside the rest of my rig—hardware synths, guitar, field recordings.</p>
+              <h3>Rig integration</h3>
+              <p>Sits alongside hardware synths, guitar, field recordings. Designed for reliability and fast troubleshooting on stage.</p>
             </div>
             <div class="mini">
-              <h3>Visual mapping (in progress)</h3>
-              <p>Developing VDMX-based workflows for audio-reactive visuals.</p>
+              <h3>Visual mapping (next)</h3>
+              <p>Developing VDMX-based workflows for audio-reactive visuals driven by Glia's output.</p>
             </div>
           </div>
         </section>
@@ -94,16 +117,24 @@
                 <div class="kicker">December 2025</div>
                 <h3>UK live shows</h3>
                 <p>
-                  Took Glia on the road for a series of live performances. The shows tested the integration of the neural engines 
-                  with the rest of my rig—reliable routing, real-time flexibility, and audience response.
+                  Took Glia on the road for live performances—stress-testing the plugin in real-world conditions. 
+                  Custom audio graphs, hardware integration, real-time flexibility. The shows proved the platform's stability and creative potential.
+                </p>
+              </div>
+              <div class="item">
+                <div class="kicker">Contribution</div>
+                <h3>Testing & feedback</h3>
+                <p>
+                  Early adopter providing feedback on performance reliability, MIDI learn workflows, and WebSocket sync behavior 
+                  in live contexts. Helping shape the roadmap from a performer's perspective.
                 </p>
               </div>
               <div class="item">
                 <div class="kicker">Next</div>
                 <h3>Visual expansion</h3>
                 <p>
-                  Working on tighter VDMX integration to add audio-reactive visuals that respond to both the Glia engines 
-                  and the broader performance input.
+                  Working on tighter VDMX integration to add audio-reactive visuals that respond to Glia's output and 
+                  the broader performance input.
                 </p>
               </div>
             </div>
