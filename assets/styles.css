@@ -176,14 +176,6 @@ main { padding: 34px 0 72px; }
 }
 .card.pad { padding: 20px; }
 
-.quick-info {
-  border-color: rgba(255, 153, 65, 0.28);
-  background:
-    radial-gradient(900px 500px at 20% 10%, rgba(255, 179, 92, 0.28), transparent 60%),
-    radial-gradient(700px 450px at 90% 25%, rgba(255, 140, 56, 0.22), transparent 58%),
-    rgba(255, 255, 255, 0.07);
-}
-
 h1 {
   margin: 0 0 10px;
   font-size: clamp(28px, 3vw, 40px);
