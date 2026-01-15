@@ -66,7 +66,7 @@ header {
 
 /* offset anchor links so sticky header doesn't cover titles */
 section[id] {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 110px;
 }
 
 .nav {
