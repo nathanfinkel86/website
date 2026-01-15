@@ -441,7 +441,7 @@ input:focus, textarea:focus {
   /* Fix background for tablet/mobile - iOS Safari needs specific handling */
   .hero-background {
     background: url('../Nathan ambient show 1.jpeg') center 30% no-repeat scroll;
-    background-size: 150% auto; /* Scale to 150% width, auto height */
+    background-size: 150%; /* Scale uniformly to 150% */
     min-height: 100vh;
   }
   
@@ -488,6 +488,15 @@ input:focus, textarea:focus {
   /* Fix background image zoom on mobile/tablet - fixed attachment doesn't work on iOS */
   main[style*="background"] {
     background-attachment: scroll !important;
+  }
+}
+
+/* Specific fix for iPhone and smaller screens */
+@media (max-width: 600px) {
+  .hero-background {
+    background: url('../Nathan ambient show 1.jpeg') center center no-repeat scroll !important;
+    background-size: cover !important;
+    min-height: 100vh;
   }
 }
 
