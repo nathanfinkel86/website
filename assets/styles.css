@@ -441,7 +441,7 @@ input:focus, textarea:focus {
   /* Adjust background position for tablet/mobile */
   .hero-background {
     background-position: center center;
-    background-size: cover;
+    background-size: auto 130%; /* Zoom out 30% more */
     background-attachment: scroll; /* Fixed attachment can cause issues on mobile */
   }
 
