@@ -31,7 +31,8 @@ body {
     radial-gradient(1200px 800px at 18% 12%, rgba(255, 183, 77, 0.18), transparent 60%),
     radial-gradient(900px 700px at 84% 22%, rgba(255, 210, 155, 0.14), transparent 58%),
     radial-gradient(900px 700px at 52% 100%, rgba(181, 93, 26, 0.16), transparent 60%),
-    linear-gradient(180deg, rgba(18, 11, 6, 1), rgba(10, 7, 5, 1));
+    /* base gradient: warm brown top to bottom */
+    linear-gradient(180deg, #1a0f08 0%, #140c07 100%);
   background-attachment: fixed;
 }
 
