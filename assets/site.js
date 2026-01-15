@@ -1,27 +1,23 @@
-// Basic niceties: mobile menu + active link + current year
+// Site JS: mobile menu + active link + year + JSON-driven copy + "Updated" badge
 (() => {
-  // Update this string when you deploy, so you can confirm you're viewing the latest version.
-  // Use an ISO timestamp (UTC recommended). Example: "2026-01-15T01:23:45Z"
-  const DEPLOY_TIMESTAMP_ISO = "2026-01-15T00:00:00Z";
+  const deployEl = document.querySelector('[data-deploy]');
+  const fmtWithTz = new Intl.DateTimeFormat(undefined, {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZoneName: 'short',
+  });
 
-  const getByPath = (obj, path) => {
-    return path.split('.').reduce((acc, key) => (acc && acc[key] != null ? acc[key] : undefined), obj);
-  };
-
-  const applyCopy = (data) => {
-    document.querySelectorAll('[data-copy]').forEach((el) => {
-      const key = el.getAttribute('data-copy');
-      if (!key) return;
-      const value = getByPath(data, key);
-      if (typeof value === 'string') {
-        el.textContent = value;
-      } else {
-        // Helpful debug if a key doesn't exist in content.json
-        // (safe to leave in production; only visible in DevTools)
-        // eslint-disable-next-line no-console
-        console.warn('[copy] Missing key or non-string value for:', key);
-      }
-    });
+  const setDeployText = (label, dateOrString) => {
+    if (!deployEl) return;
+    if (dateOrString instanceof Date && !Number.isNaN(dateOrString.getTime())) {
+      deployEl.textContent = `${label}: ${fmtWithTz.format(dateOrString)}`;
+    } else {
+      deployEl.textContent = `${label}: ${String(dateOrString)}`;
+    }
   };
 
   const menuBtn = document.querySelector('[data-menu]');
@@ -44,53 +40,55 @@
   const y = document.querySelector('[data-year]');
   if (y) y.textContent = String(new Date().getFullYear());
 
-  // deploy badge
-  const d = document.querySelector('[data-deploy]');
-  if (d) {
-    const deployDate = new Date(DEPLOY_TIMESTAMP_ISO);
-    const fmt = new Intl.DateTimeFormat(undefined, {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      timeZoneName: "short",
-    });
+  // copy helpers
+  const getByPath = (obj, dotPath) =>
+    dotPath.split('.').reduce((acc, key) => (acc && acc[key] != null ? acc[key] : undefined), obj);
 
-    const render = () => {
-      if (Number.isNaN(deployDate.getTime())) {
-        d.textContent = `Deployed: ${DEPLOY_TIMESTAMP_ISO}`;
-        return;
+  const applyCopy = (data) => {
+    document.querySelectorAll('[data-copy]').forEach((el) => {
+      const key = el.getAttribute('data-copy');
+      if (!key) return;
+      const value = getByPath(data, key);
+      if (typeof value === 'string') {
+        el.textContent = value;
+      } else {
+        // eslint-disable-next-line no-console
+        console.warn('[copy] Missing key or non-string value for:', key);
       }
-      d.textContent = `Deployed: ${fmt.format(deployDate)}`;
-    };
+    });
+  };
 
-    render();
-  }
-
-  // copy (single source of truth): assets/content.json
+  // Load content.json and use its server Last-Modified as the "Updated" badge.
   try {
     const script = document.currentScript || document.querySelector('script[src*="assets/site.js"]');
     const baseUrl = script?.src ? new URL('content.json', script.src).toString() : 'assets/content.json';
-    // Bust caches between deploys (GitHub Pages can be sticky).
-    const contentUrl = `${baseUrl}?v=${encodeURIComponent(DEPLOY_TIMESTAMP_ISO)}`;
+    const contentUrl = `${baseUrl}?v=${Date.now()}`; // strong cache-bust per page load
+
     fetch(contentUrl, { cache: 'no-store' })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((json) => {
-        if (json) {
-          applyCopy(json);
-        } else {
+      .then(async (r) => {
+        if (!r.ok) return { ok: false, json: null, lastModified: null };
+        const lastModifiedRaw = r.headers.get('last-modified');
+        const lastModified = lastModifiedRaw ? new Date(lastModifiedRaw) : null;
+        const json = await r.json().catch(() => null);
+        return { ok: true, json, lastModified };
+      })
+      .then(({ ok, json, lastModified }) => {
+        if (!ok || !json) {
           // eslint-disable-next-line no-console
-          console.warn('[copy] Failed to load content.json (non-OK response)');
+          console.warn('[copy] Failed to load content.json (non-OK response or invalid JSON)');
+          setDeployText('Updated', 'content.json failed to load');
+          return;
         }
+        if (lastModified) setDeployText('Updated', lastModified);
+        applyCopy(json);
       })
       .catch((err) => {
         // eslint-disable-next-line no-console
         console.warn('[copy] Failed to load content.json:', err);
+        setDeployText('Updated', 'content.json failed to load');
       });
   } catch (_) {
-    // no-op: fallback is the hardcoded HTML copy
+    // no-op: fallback is hardcoded HTML copy
   }
 })();
 
