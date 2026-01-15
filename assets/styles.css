@@ -438,16 +438,11 @@ input:focus, textarea:focus {
   .hero-grid { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
 
-  /* Fix background for tablet/mobile - iOS Safari needs specific handling */
+  /* Adjust background position for tablet/mobile */
   .hero-background {
-    background: url('../Nathan ambient show 1.jpeg') center 30% no-repeat scroll;
-    background-size: 150%; /* Scale uniformly to 150% */
-    min-height: 100vh;
-  }
-  
-  /* Adjust overlay for better mobile visibility */
-  .hero-background > div:first-child {
-    background: linear-gradient(180deg, rgba(10, 15, 20, 0.45) 0%, rgba(10, 15, 20, 0.55) 100%);
+    background-position: center 40%;
+    background-size: cover;
+    background-attachment: scroll;
   }
   
   /* Make floating heading responsive on mobile */
@@ -484,20 +479,6 @@ input:focus, textarea:focus {
     gap: 6px;
   }
   .nav-links a { padding: 12px 12px; }
-
-  /* Fix background image zoom on mobile/tablet - fixed attachment doesn't work on iOS */
-  main[style*="background"] {
-    background-attachment: scroll !important;
-  }
-}
-
-/* Specific fix for iPhone and smaller screens */
-@media (max-width: 600px) {
-  .hero-background {
-    background: url('../Nathan ambient show 1.jpeg') center center no-repeat scroll !important;
-    background-size: cover !important;
-    min-height: 100vh;
-  }
 }
 
 /* Fix for larger tablets like iPad Pro */
