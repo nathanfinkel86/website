@@ -20,6 +20,12 @@
     - `#glia`
     - `#morocco`
   - Chips/tags across the site link into these anchors.
+  - Each section also links to an **unlisted detail subpage**:
+    - `music-website/p/ambient.html`
+    - `music-website/p/rig.html`
+    - `music-website/p/facilitation.html`
+    - `music-website/p/glia.html`
+    - `music-website/p/morocco.html`
 - **Shows**: `music-website/shows.html` (placeholder listings + “recent highlights”)
 - **Contact**: `music-website/contact.html` (mailto link + demo form placeholder)
 
@@ -56,4 +62,5 @@ Then open `http://localhost:8000`.
 - Replace “Video” placeholder links in `music.html`
 - Replace “Upcoming” listings in `shows.html`
 - Make the contact form actually submit somewhere (Formspree / Netlify Forms), if desired
+ - Update the deploy timestamp string in `assets/site.js` when you deploy
 
