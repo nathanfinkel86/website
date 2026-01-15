@@ -438,11 +438,29 @@ input:focus, textarea:focus {
   .hero-grid { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
 
-  /* Adjust background position for tablet/mobile */
+  /* Fix background for tablet/mobile - iOS Safari needs specific handling */
   .hero-background {
-    background-position: center 40%;
-    background-size: cover;
-    background-attachment: scroll; /* Fixed attachment can cause issues on mobile */
+    background: url('../Nathan ambient show 1.jpeg') center top / cover no-repeat scroll;
+    min-height: 100vh;
+  }
+  
+  /* Adjust overlay for better mobile visibility */
+  .hero-background > div:first-child {
+    background: linear-gradient(180deg, rgba(10, 15, 20, 0.45) 0%, rgba(10, 15, 20, 0.55) 100%);
+  }
+  
+  /* Make floating heading responsive on mobile */
+  .hero-background .container > div[style*="position: absolute"] {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 20px 0 !important;
+    max-width: 100% !important;
+  }
+  
+  /* Reduce hero spacing on mobile */
+  .hero[style*="padding-top"] {
+    padding-top: 40px !important;
   }
 
   .menu-btn {
