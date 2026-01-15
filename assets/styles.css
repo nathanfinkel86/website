@@ -64,6 +64,11 @@ header {
   border-bottom: 1px solid var(--border);
 }
 
+/* offset anchor links so sticky header doesn't cover titles */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
 .nav {
   display: flex;
   align-items: center;
