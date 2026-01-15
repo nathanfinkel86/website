@@ -25,7 +25,7 @@
     "ambientSummary": "Immersive ambient/electronic sets built around layered textures, found sound, and melodic guitar. Often improvised and shaped to the room.",
     "rigSummary": "The rig is part of the ambient/electronic project: a hybrid analogue/digital setup designed for reliable routing, fast setup, and live flexibility (including optional Glia + visuals).",
     "facilitationSummary": "Structured jam sessions that help mixed-ability groups play together quickly. Focus is on listening, rhythm cues, and confidence.",
-    "gliaSummary": "Glia runs as a VST in a DAW. I integrate it with a live rig for real-time MIDI/audio interaction (successful UK shows in Dec 2025).",
+    "gliaSummary": "Glia runs as a VST in a DAW as well as a networked session instance. I integrate it with a live rig for real-time MIDI/audio interaction (successful UK shows in Dec 2025).",
     "moroccoSummary": "Recording direction connected to Essaouira, blending Gnawa rhythms with electronic sound design."
   },
   "music": {
