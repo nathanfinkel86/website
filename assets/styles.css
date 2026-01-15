@@ -46,6 +46,11 @@ body {
   background-attachment: fixed;
 }
 
+/* Hero background image (index.html) */
+.hero-background {
+  background: url('../Nathan ambient show 1.jpeg') center 20% / cover no-repeat fixed;
+}
+
 a { 
   color: inherit; 
   transition: all 0.2s;
@@ -432,6 +437,13 @@ input:focus, textarea:focus {
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
+
+  /* Adjust background position for tablet/mobile */
+  .hero-background {
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll; /* Fixed attachment can cause issues on mobile */
+  }
 
   .menu-btn {
     display: inline-flex;
