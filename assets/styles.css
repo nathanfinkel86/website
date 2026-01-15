@@ -184,13 +184,17 @@ h1 {
   margin-top: 14px;
 }
 .chip {
+  display: inline-flex;
+  align-items: center;
   padding: 7px 9px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.05);
   font-size: 13px;
   color: var(--muted);
+  text-decoration: none;
 }
+.chip:hover { color: var(--text); border-color: rgba(255,255,255,0.16); background: rgba(255,255,255,0.07); }
 
 .section {
   margin-top: 18px;
@@ -237,13 +241,17 @@ h1 {
 .item p { margin: 0; color: var(--muted); line-height: 1.55; }
 .item .meta { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
 .tag {
+  display: inline-flex;
+  align-items: center;
   font-size: 12px;
   color: var(--muted);
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: 999px;
   padding: 6px 8px;
   background: rgba(0,0,0,0.12);
+  text-decoration: none;
 }
+.tag:hover { color: var(--text); border-color: rgba(255,255,255,0.16); }
 
 .footer {
   border-top: 1px solid var(--border);
