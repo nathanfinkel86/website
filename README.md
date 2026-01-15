@@ -5,8 +5,16 @@ Brighton-based musician and music technologist: ambient/electronic performance, 
 ## Live Site
 **URL:** https://nathanfinkel86.github.io/website/
 
-## Quick Update Guide
-See **[HOW-TO-UPDATE.md](HOW-TO-UPDATE.md)** for detailed instructions on updating content and deploying changes.
+## 📚 Documentation
+
+All documentation is in the **[`docs/`](docs/)** folder:
+
+- **[HOW-TO-UPDATE.md](docs/HOW-TO-UPDATE.md)** - Update content and deploy changes
+- **[TEMPLATE-README.md](docs/TEMPLATE-README.md)** - Use this site as a template
+- **[CUSTOMIZATION-GUIDE.md](docs/CUSTOMIZATION-GUIDE.md)** - Step-by-step customization
+- **[DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md)** - Complete design documentation
+- **[CODE-STRUCTURE.md](docs/CODE-STRUCTURE.md)** - Technical architecture
+- **[CODEBASE-STATUS.md](docs/CODEBASE-STATUS.md)** - Current status
 
 ## Project Structure
 
@@ -33,11 +41,20 @@ music-website/
 ```
 
 ## Key Features
+- **Hero background image** - Immersive full-page design
 - **Responsive design** - works on mobile, tablet, desktop
 - **Teal color palette** - cool blue/cyan/purple tones
 - **Enhanced hover effects** - glowing clickable elements
-- **Organized content** - split by performance, facilitation, tech
+- **External integrations** - SoundCloud, Dandelion events, Formspree
 - **GitHub Pages** hosting - free, reliable, automatic deploys
+
+## 🎨 Using as a Template
+
+This site is designed to be reusable! See **[docs/TEMPLATE-README.md](docs/TEMPLATE-README.md)** for:
+- How to use this as a template for your own site
+- Complete customization guide
+- Design system documentation
+- Deployment instructions
 
 ## Deployment
 Push to `main` branch → GitHub Pages automatically rebuilds → Live in ~2 minutes

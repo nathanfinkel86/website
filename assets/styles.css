@@ -453,5 +453,24 @@ input:focus, textarea:focus {
     gap: 6px;
   }
   .nav-links a { padding: 12px 12px; }
+
+  /* Fix background image zoom on mobile/tablet - fixed attachment doesn't work on iOS */
+  main[style*="background"] {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Fix for larger tablets like iPad Pro */
+@media (max-width: 1200px) {
+  main[style*="background"] {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Also fix for touch devices regardless of screen size */
+@media (hover: none) and (pointer: coarse) {
+  main[style*="background"] {
+    background-attachment: scroll !important;
+  }
 }
 
