@@ -46,8 +46,14 @@ body {
   background-attachment: fixed;
 }
 
-a { color: inherit; }
-a:hover { color: white; }
+a { 
+  color: inherit; 
+  transition: all 0.2s;
+}
+a:hover { 
+  color: white;
+  text-shadow: 0 0 10px rgba(155, 246, 255, 0.5);
+}
 
 .container {
   width: min(1100px, calc(100% - 32px));
@@ -185,8 +191,15 @@ main { padding: 34px 0 72px; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 .card.pad { padding: 20px; }
+.card:has(.stretched-link):hover {
+  background: var(--panel-2);
+  border-color: rgba(155, 246, 255, 0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(155, 246, 255, 0.2);
+  cursor: pointer;
+}
 
 /* stretched link: make entire card clickable while preserving nested links/buttons */
 .stretched-link::after {
@@ -226,8 +239,14 @@ h1 {
   font-size: 13px;
   color: var(--muted);
   text-decoration: none;
+  transition: all 0.2s;
 }
-.chip:hover { color: var(--text); border-color: rgba(255,255,255,0.16); background: rgba(255,255,255,0.07); }
+.chip:hover { 
+  color: var(--text); 
+  border-color: rgba(155, 246, 255, 0.4); 
+  background: rgba(155, 246, 255, 0.12);
+  box-shadow: 0 0 18px rgba(155, 246, 255, 0.35);
+}
 
 /* Chip color variations - consistent across pages by topic */
 .chip[href*="ambient"] { background: var(--color-1); border-color: var(--border-1); }
@@ -274,8 +293,9 @@ h1 {
   transition: background 0.2s, border-color 0.2s;
 }
 .item:has(.stretched-link):hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.30);
+  box-shadow: 0 0 20px rgba(155, 246, 255, 0.25);
   cursor: pointer;
 }
 .item .kicker {
@@ -297,8 +317,14 @@ h1 {
   padding: 6px 8px;
   background: rgba(0,0,0,0.12);
   text-decoration: none;
+  transition: all 0.2s;
 }
-.tag:hover { color: var(--text); border-color: rgba(255,255,255,0.16); }
+.tag:hover { 
+  color: var(--text); 
+  border-color: rgba(155, 246, 255, 0.4);
+  background: rgba(155, 246, 255, 0.10);
+  box-shadow: 0 0 15px rgba(155, 246, 255, 0.30);
+}
 
 /* Tag color variations - consistent across pages by topic */
 .tag[href*="ambient"] { background: var(--color-1); border-color: var(--border-1); }
