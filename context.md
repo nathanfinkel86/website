@@ -20,12 +20,6 @@
     - `#glia`
     - `#morocco`
   - Chips/tags across the site link into these anchors.
-  - Each section also links to an **unlisted detail subpage**:
-    - `music-website/p/ambient.html`
-    - `music-website/p/rig.html` (redirects to `p/ambient.html#rig`)
-    - `music-website/p/facilitation.html`
-    - `music-website/p/glia.html`
-    - `music-website/p/morocco.html`
 - **Shows**: `music-website/shows.html` (placeholder listings + “recent highlights”)
 - **Contact**: `music-website/contact.html` (mailto link + demo form placeholder)
 
