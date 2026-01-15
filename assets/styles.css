@@ -169,12 +169,29 @@ main { padding: 34px 0 72px; }
   align-items: start;
 }
 .card {
+  position: relative;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 .card.pad { padding: 20px; }
+
+/* stretched link: make entire card clickable while preserving nested links/buttons */
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+}
+.card a:not(.stretched-link),
+.card button {
+  position: relative;
+  z-index: 2;
+}
 
 h1 {
   margin: 0 0 10px;
