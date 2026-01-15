@@ -1,5 +1,9 @@
 // Basic niceties: mobile menu + active link + current year
 (() => {
+  // Update this string when you deploy, so you can confirm you're viewing the latest version.
+  // Suggested format: YYYY-MM-DD HH:MM (timezone)
+  const DEPLOY_TIMESTAMP = "2026-01-15 00:00 UTC";
+
   const menuBtn = document.querySelector('[data-menu]');
   const nav = document.querySelector('[data-nav]');
   if (menuBtn && nav) {
@@ -19,5 +23,9 @@
   // year
   const y = document.querySelector('[data-year]');
   if (y) y.textContent = String(new Date().getFullYear());
+
+  // deploy badge
+  const d = document.querySelector('[data-deploy]');
+  if (d) d.textContent = `Deployed: ${DEPLOY_TIMESTAMP}`;
 })();
 
