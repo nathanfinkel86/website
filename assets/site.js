@@ -13,7 +13,14 @@
       const key = el.getAttribute('data-copy');
       if (!key) return;
       const value = getByPath(data, key);
-      if (typeof value === 'string') el.textContent = value;
+      if (typeof value === 'string') {
+        el.textContent = value;
+      } else {
+        // Helpful debug if a key doesn't exist in content.json
+        // (safe to leave in production; only visible in DevTools)
+        // eslint-disable-next-line no-console
+        console.warn('[copy] Missing key or non-string value for:', key);
+      }
     });
   };
 
@@ -65,13 +72,23 @@
   // copy (single source of truth): assets/content.json
   try {
     const script = document.currentScript || document.querySelector('script[src*="assets/site.js"]');
-    const contentUrl = script?.src ? new URL('content.json', script.src).toString() : 'assets/content.json';
-    fetch(contentUrl)
+    const baseUrl = script?.src ? new URL('content.json', script.src).toString() : 'assets/content.json';
+    // Bust caches between deploys (GitHub Pages can be sticky).
+    const contentUrl = `${baseUrl}?v=${encodeURIComponent(DEPLOY_TIMESTAMP_ISO)}`;
+    fetch(contentUrl, { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : null))
       .then((json) => {
-        if (json) applyCopy(json);
+        if (json) {
+          applyCopy(json);
+        } else {
+          // eslint-disable-next-line no-console
+          console.warn('[copy] Failed to load content.json (non-OK response)');
+        }
       })
-      .catch(() => {});
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.warn('[copy] Failed to load content.json:', err);
+      });
   } catch (_) {
     // no-op: fallback is the hardcoded HTML copy
   }
