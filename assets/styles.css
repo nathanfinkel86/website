@@ -15,6 +15,10 @@
 
 * { box-sizing: border-box; }
 html, body { height: 100%; }
+
+/* When jumping to #anchors, offset for the sticky header so titles aren't hidden */
+*[id] { scroll-margin-top: 84px; }
+
 body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
