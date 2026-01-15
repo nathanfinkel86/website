@@ -1,7 +1,7 @@
 # Music Website — Context
 
 ## Live site
-- **Netlify URL**: `https://stirring-banoffee-724cb3.netlify.app`
+- **GitHub Pages URL**: `https://nathanfinkel86.github.io/website/`
 - **Goal domain**: `natecreates.co.uk` (currently on Canva; plan is to point DNS to the new static site host)
 
 ## What this is
@@ -45,9 +45,8 @@
 - Projects page is the “map” that tags/chips jump to.
 
 ## Hosting notes (practical)
-- Easiest hosting options: **Netlify / Cloudflare Pages / GitHub Pages** (static hosting).
-- For `natecreates.co.uk`: you’ll need to update DNS away from Canva to your static host.
-  - Netlify will provide either **nameservers** (simplest) or **A/AAAA + CNAME** records.
+- Current host: **GitHub Pages**.
+- For `natecreates.co.uk`: you’ll need to update DNS away from Canva to point at GitHub Pages (A/AAAA and optionally a `www` CNAME).
 
 ## Local run (dev)
 From `music-website/`:
@@ -62,6 +61,6 @@ Then open `http://localhost:8000`.
 - Replace the two SoundCloud embed placeholder URLs in `music.html`
 - Replace “Video” placeholder links in `music.html`
 - Replace “Upcoming” listings in `shows.html`
-- Make the contact form actually submit somewhere (Formspree / Netlify Forms), if desired
+- Make the contact form actually submit somewhere (e.g. Formspree), if desired
  - Update the deploy timestamp string in `assets/site.js` when you deploy
 
