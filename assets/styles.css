@@ -48,7 +48,7 @@ body {
 
 /* Hero background image (index.html) */
 .hero-background {
-  background: url('../Nathan ambient show 1.jpeg') center 20% / cover no-repeat fixed;
+  background: url('../assets/images/hero/nathan-ambient-show-1.jpeg') center 20% / cover no-repeat fixed;
 }
 
 a { 
