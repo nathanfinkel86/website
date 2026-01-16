@@ -135,7 +135,7 @@ section[id] {
   border-radius: 10px;
   border: 1px solid transparent;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 12px;
 }
 .nav-links a[aria-current="page"] {
   color: var(--text);
@@ -487,26 +487,46 @@ input:focus, textarea:focus {
     background-attachment: scroll; /* Fixed attachment can cause issues on mobile */
   }
 
+  .nav {
+    gap: 8px;
+  }
+
+  .nav-cta {
+    gap: 4px;
+  }
+
+  .btn.small {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
   .menu-btn {
     display: inline-flex;
+    order: -1; /* Move menu button to the left */
   }
 
   .nav-links {
     display: none;
     position: absolute;
     left: 0;
-    right: 0;
     top: 62px;
+    right: auto;
+    width: auto;
+    max-width: 200px;
     padding: 10px 16px 16px;
     background: rgba(11, 15, 20, 0.92);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
   }
   .nav-links.open {
     display: grid;
     gap: 6px;
   }
-  .nav-links a { padding: 12px 12px; }
+  .nav-links a { 
+    padding: 12px 12px;
+    white-space: nowrap;
+  }
 }
 
 /* Fix for larger tablets like iPad Pro */
