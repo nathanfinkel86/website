@@ -1,0 +1,30 @@
+Cheat Sheat 
+cd music-website && 
+python3 -m http.server 8000
+http://localhost:8000
+https://nathanfinkel86.github.io/website/music.html
+
+--------------------------------
+
+# First, add the changes
+git add .
+
+# Then commit
+git commit -m "COMMENT HERE"
+
+# Then push
+git push origin main    
+
+
+--------------------------------
+
+cd "/Users/nathanfinkel/Documents/Admin - Cursor/music-website"
+git status                          # Check what's changed
+git add .                           # Stage everything
+git commit -m "Refactor: reorganize codebase structure
+
+- Move images to assets/images/ with categories     
+- Rename p/ to pages/
+- Standardize filenames
+- Add .gitignore"
+git push origin main                # Push to remote
