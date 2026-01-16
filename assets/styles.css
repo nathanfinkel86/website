@@ -209,9 +209,51 @@ main { padding: 34px 0 72px; }
   border-color: rgba(155, 246, 255, 0.35);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(155, 246, 255, 0.2);
   cursor: pointer;
+} 
+
+
+/* Utility classes for hero and glass effects */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 15, 20, 0.35) 0%, rgba(10, 15, 20, 0.40) 100%);
+}
+
+.hero-title-box {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  max-width: 420px;
+  padding: 20px 24px;
+  background: rgba(11, 15, 20, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.hero-title-box h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.card-glass {
+  background: rgba(11, 15, 20, 0.75);
+  backdrop-filter: blur(10px);
+}
+
+.hero-content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-padding-top {
+  padding-top: 340px;
 }
 
 /* stretched link: make entire card clickable while preserving nested links/buttons */
+
 .stretched-link::after {
   position: absolute;
   top: 0;
@@ -442,21 +484,7 @@ input:focus, textarea:focus {
   .hero-background {
     background-position: center 40%;
     background-size: cover;
-    background-attachment: scroll;
-  }
-  
-  /* Make floating heading responsive on mobile */
-  .hero-background .container > div[style*="position: absolute"] {
-    position: relative !important;
-    top: 0 !important;
-    left: 0 !important;
-    margin: 20px 0 !important;
-    max-width: 100% !important;
-  }
-  
-  /* Reduce hero spacing on mobile */
-  .hero[style*="padding-top"] {
-    padding-top: 40px !important;
+    background-attachment: scroll; /* Fixed attachment can cause issues on mobile */
   }
 
   .menu-btn {
