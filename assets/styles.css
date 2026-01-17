@@ -254,6 +254,24 @@ main { padding: 34px 0 72px; }
   line-height: 1.1;
   font-weight: 700;
 }
+/* Hero top section: headline and image side by side */
+.hero-top-section {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 12px;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.hero-image {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(11, 15, 20, 0.68);
+  height: 280px;
+}
+
+
 
 .hero-content-wrapper {
   position: relative;
