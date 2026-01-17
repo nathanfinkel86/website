@@ -374,12 +374,19 @@ h1 {
 
 /* Chip color variations - consistent across pages by topic */
 .chip[href*="ambient"] { background: var(--color-1); border-color: var(--border-1); }
-.chip[href*="facilitation"] { background: var(--color-2); border-color: var(--border-2); }
-.chip[href*="glia"] { background: var(--color-3); border-color: var(--border-3); }
-.chip[href*="morocco"] { background: var(--color-4); border-color: var(--border-4); }
-.chip[href*="rig"] { background: var(--color-1); border-color: var(--border-1); }
+/* Chip color variations - wider palette by position */
+.chips .chip:nth-child(1) { background: linear-gradient(135deg, rgba(155, 246, 255, 0.18), rgba(155, 246, 255, 0.10)); border-color: rgba(155, 246, 255, 0.35); }
+.chips .chip:nth-child(2) { background: linear-gradient(135deg, rgba(189, 178, 255, 0.18), rgba(189, 178, 255, 0.10)); border-color: rgba(189, 178, 255, 0.35); }
+.chips .chip:nth-child(3) { background: linear-gradient(135deg, rgba(168, 255, 214, 0.18), rgba(168, 255, 214, 0.10)); border-color: rgba(168, 255, 214, 0.35); }
+.chips .chip:nth-child(4) { background: linear-gradient(135deg, rgba(255, 183, 255, 0.18), rgba(255, 183, 255, 0.10)); border-color: rgba(255, 183, 255, 0.35); }
+.chips .chip:nth-child(5) { background: linear-gradient(135deg, rgba(155, 246, 255, 0.18), rgba(155, 246, 255, 0.10)); border-color: rgba(155, 246, 255, 0.35); }
 
-.section {
+/* Fallback for href-based styling */
+.chip[href*="ambient"] { background: linear-gradient(135deg, rgba(155, 246, 255, 0.18), rgba(155, 246, 255, 0.10)); border-color: rgba(155, 246, 255, 0.35); }
+.chip[href*="facilitation"] { background: linear-gradient(135deg, rgba(189, 178, 255, 0.18), rgba(189, 178, 255, 0.10)); border-color: rgba(189, 178, 255, 0.35); }
+.chip[href*="glia"] { background: linear-gradient(135deg, rgba(168, 255, 214, 0.18), rgba(168, 255, 214, 0.10)); border-color: rgba(168, 255, 214, 0.35); }
+.chip[href*="morocco"] { background: linear-gradient(135deg, rgba(255, 183, 255, 0.18), rgba(255, 183, 255, 0.10)); border-color: rgba(255, 183, 255, 0.35); }
+.chip[href*="rig"] { background: linear-gradient(135deg, rgba(155, 246, 255, 0.18), rgba(155, 246, 255, 0.10)); border-color: rgba(155, 246, 255, 0.35); }
   margin-top: 18px;
 }
 .section h2 {
