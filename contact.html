@@ -40,37 +40,42 @@
       </div>
     </header>
 
-    <main id="content">
+    <main id="content" class="hero-background" style="position: relative;">
+      <div class="hero-overlay"></div>
       <div class="container">
         <section class="hero">
-          <div class="hero-grid">
-            <div class="card pad">
-              <h1>Contact</h1>
-              <p class="lede">
-                Bookings, workshops, collaborations, and technical music / sound work.
-              </p>
+          <div class="card pad">
+            <h1>Contact</h1>
+            <p class="lede">
+              Bookings, workshops, collaborations, and technical music / sound work.
+            </p>
+          </div>
+        </section>
 
-              <div class="section">
-                <h2>Direct</h2>
-                <div class="list">
-                  <div class="item">
-                    <div class="kicker">Email</div>
-                    <h3><a href="mailto:nathanfinkel@gmail.com">nathanfinkel@gmail.com</a></h3>
-                    <p>Fastest way to reach me.</p>
-                  </div>
-                  <div class="item">
-                    <div class="kicker">Website</div>
-                    <h3><a href="https://natecreates.co.uk" target="_blank" rel="noreferrer">natecreates.co.uk</a></h3>
-                    <p>Portfolio and updates.</p>
-                  </div>
+        <section class="section">
+          <div class="hero-grid">
+            <!-- Left: Direct contact & social -->
+            <div class="card pad">
+              <h2>Direct</h2>
+              <div class="list">
+                <div class="item">
+                  <div class="kicker">Instagram</div>
+                  <h3><a href="https://instagram.com/nathan_finkel_music" target="_blank" rel="noreferrer">@nathan_finkel_music</a></h3>
+                  <p>Updates, behind-the-scenes, and live clips.</p>
+                </div>
+                <div class="item">
+                  <div class="kicker">Website</div>
+                  <h3><a href="https://natecreates.co.uk" target="_blank" rel="noreferrer">natecreates.co.uk</a></h3>
+                  <p>Portfolio and project updates.</p>
                 </div>
               </div>
             </div>
 
-            <aside class="card pad">
+            <!-- Right: Form -->
+            <div class="card pad">
               <h2>Send a message</h2>
-              <p class="note">
-                This form sends via Formspree.
+              <p class="note" style="margin-bottom: 16px;">
+                Fastest way for direct inquiries about bookings or collaboration.
               </p>
               <form class="form" action="https://formspree.io/f/mnjjngal" method="POST">
                 <div class="field">
@@ -83,13 +88,13 @@
                 </div>
                 <div class="field">
                   <label for="msg">Message</label>
-                  <textarea id="msg" name="message" placeholder="A few lines about what you’re looking for..." required></textarea>
+                  <textarea id="msg" name="message" placeholder="Tell me about your event, project, or idea..." required></textarea>
                 </div>
                 <button class="btn primary" type="submit">
                   Send
                 </button>
               </form>
-            </aside>
+            </div>
           </div>
         </section>
 
