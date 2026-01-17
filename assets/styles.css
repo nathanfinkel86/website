@@ -228,7 +228,6 @@ main { padding: 34px 0 72px; }
   cursor: pointer;
 } 
 
-
 /* Utility classes for hero and glass effects */
 .hero-overlay {
   position: absolute;
@@ -236,24 +235,6 @@ main { padding: 34px 0 72px; }
   background: linear-gradient(180deg, rgba(10, 15, 20, 0.35) 0%, rgba(10, 15, 20, 0.40) 100%);
 }
 
-.hero-title-box {
-  position: absolute;
-  top: 40px;
-  left: 20px;
-  max-width: 420px;
-  padding: 20px 24px;
-  background: rgba(26, 15, 8, 0.68);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  border: 1px solid var(--border);
-}
-
-.hero-title-box h1 {
-  margin: 0;
-  font-size: 42px;
-  line-height: 1.1;
-  font-weight: 700;
-}
 /* Hero top section: headline and image side by side */
 .hero-top-section {
   display: grid;
@@ -308,33 +289,9 @@ main { padding: 34px 0 72px; }
   border-color: rgba(155, 246, 255, 0.2);
 }
 
-.chip-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 20px;
-  background: linear-gradient(to bottom, rgba(11, 15, 20, 0), rgba(11, 15, 20, 0.8));
-  min-height: 100px;
-}
-
-.chip-overlay .chips {
-  margin-top: 0;
-  gap: 8px;
-}
-
-
-
 .hero-content-wrapper {
   position: relative;
   z-index: 1;
-}
-
-.hero-padding-top {
-  padding-top: 280px;
 }
 
 /* stretched link: make entire card clickable while preserving nested links/buttons */
