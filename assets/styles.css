@@ -287,10 +287,14 @@ main { padding: 34px 0 72px; }
 .hero-image {
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(155, 246, 255, 0.2);
+  border: 1px solid var(--border);
   background: rgba(11, 15, 20, 0.68);
-  height: 400px;
+  backdrop-filter: blur(10px);
+  height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-image img {
