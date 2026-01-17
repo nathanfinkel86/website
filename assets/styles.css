@@ -257,13 +257,20 @@ main { padding: 34px 0 72px; }
 /* Hero top section: headline and image side by side */
 .hero-top-section {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   align-items: start;
   margin-bottom: 20px;
 }
 
-.hero-top-section > div:last-child {
+.hero-top-section .hero-title-box {
+  position: relative;
+  top: auto;
+  left: auto;
+  max-width: none;
+}
+
+.hero-top-section .hero-image-container {
   display: flex;
   justify-content: center;
 }
