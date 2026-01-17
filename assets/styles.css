@@ -236,24 +236,6 @@ main { padding: 34px 0 72px; }
   background: linear-gradient(180deg, rgba(10, 15, 20, 0.35) 0%, rgba(10, 15, 20, 0.40) 100%);
 }
 
-/* Full-width image backdrop for hero section */
-.hero-image-backdrop {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50vw;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.hero-image-backdrop img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-}
-
 .hero-title-box {
   position: absolute;
   top: 40px;
