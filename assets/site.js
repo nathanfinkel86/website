@@ -1,12 +1,7 @@
-// Basic niceties: mobile menu + active link + current year
+// Basic niceties: mobile menu + active link + current year + accordion
 (() => {
   const menuBtn = document.querySelector('[data-menu]');
   const nav = document.querySelector('[data-nav]');
-  
-  // #region agent log - hypothesis verification
-  const computedStyle = window.getComputedStyle(menuBtn);
-  fetch('http://127.0.0.1:7243/ingest/57e4b33a-454a-4197-9047-3a5a1f7e8f4a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'site.js:6',message:'Menu button computed style on load',data:{display:computedStyle.display,backgroundColor:computedStyle.backgroundColor,borderColor:computedStyle.borderColor,viewport:`${window.innerWidth}x${window.innerHeight}`},timestamp:Date.now(),sessionId:'debug-session',hypothesisId:'A,B,C'})}).catch(()=>{});
-  // #endregion
   
   if (menuBtn && nav) {
     menuBtn.addEventListener('click', () => {
@@ -25,5 +20,24 @@
   // year
   const y = document.querySelector('[data-year]');
   if (y) y.textContent = String(new Date().getFullYear());
+
+  // accordion functionality
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const isExpanded = item.classList.contains('expanded');
+      
+      // Close all other accordion items on the page
+      document.querySelectorAll('.accordion-item').forEach(accordion => {
+        accordion.classList.remove('expanded');
+      });
+      
+      // Toggle current item
+      if (!isExpanded) {
+        item.classList.add('expanded');
+      }
+    });
+  });
 })();
 
