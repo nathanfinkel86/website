@@ -372,21 +372,14 @@ h1 {
   color: var(--muted);
 }
 
-/* Chip color variations - consistent across pages by topic */
-.chip[href*="ambient"] { background: var(--color-1); border-color: var(--border-1); }
-/* Chip color variations - wider palette by position */
-.chips .chip:nth-child(1) { background: linear-gradient(135deg, rgba(155, 246, 255, 0.18), rgba(155, 246, 255, 0.10)); border-color: rgba(155, 246, 255, 0.35); }
-.chips .chip:nth-child(2) { background: linear-gradient(135deg, rgba(189, 178, 255, 0.18), rgba(189, 178, 255, 0.10)); border-color: rgba(189, 178, 255, 0.35); }
-.chips .chip:nth-child(3) { background: linear-gradient(135deg, rgba(168, 255, 214, 0.18), rgba(168, 255, 214, 0.10)); border-color: rgba(168, 255, 214, 0.35); }
-.chips .chip:nth-child(4) { background: linear-gradient(135deg, rgba(255, 183, 255, 0.18), rgba(255, 183, 255, 0.10)); border-color: rgba(255, 183, 255, 0.35); }
-.chips .chip:nth-child(5) { background: linear-gradient(135deg, rgba(155, 246, 255, 0.18), rgba(155, 246, 255, 0.10)); border-color: rgba(155, 246, 255, 0.35); }
+/* Chip color variations - matches project section colors */
+.chip[href*="ambient"] { background: linear-gradient(135deg, rgba(155, 246, 255, 0.22), rgba(155, 246, 255, 0.12)); border-color: rgba(155, 246, 255, 0.5); }
+.chip[href*="houseband"] { background: linear-gradient(135deg, rgba(255, 214, 168, 0.22), rgba(255, 214, 168, 0.12)); border-color: rgba(255, 214, 168, 0.5); }
+.chip[href*="facilitation"] { background: linear-gradient(135deg, rgba(189, 178, 255, 0.22), rgba(189, 178, 255, 0.12)); border-color: rgba(189, 178, 255, 0.5); }
+.chip[href*="glia"] { background: linear-gradient(135deg, rgba(168, 255, 214, 0.22), rgba(168, 255, 214, 0.12)); border-color: rgba(168, 255, 214, 0.5); }
+.chip[href*="morocco"] { background: linear-gradient(135deg, rgba(255, 183, 255, 0.22), rgba(255, 183, 255, 0.12)); border-color: rgba(255, 183, 255, 0.5); }
 
-/* Fallback for href-based styling */
-.chip[href*="ambient"] { background: linear-gradient(135deg, rgba(155, 246, 255, 0.18), rgba(155, 246, 255, 0.10)); border-color: rgba(155, 246, 255, 0.35); }
-.chip[href*="facilitation"] { background: linear-gradient(135deg, rgba(189, 178, 255, 0.18), rgba(189, 178, 255, 0.10)); border-color: rgba(189, 178, 255, 0.35); }
-.chip[href*="glia"] { background: linear-gradient(135deg, rgba(168, 255, 214, 0.18), rgba(168, 255, 214, 0.10)); border-color: rgba(168, 255, 214, 0.35); }
-.chip[href*="morocco"] { background: linear-gradient(135deg, rgba(255, 183, 255, 0.18), rgba(255, 183, 255, 0.10)); border-color: rgba(255, 183, 255, 0.35); }
-.chip[href*="rig"] { background: linear-gradient(135deg, rgba(155, 246, 255, 0.18), rgba(155, 246, 255, 0.10)); border-color: rgba(155, 246, 255, 0.35); }
+.section {
   margin-top: 18px;
 }
 .section h2 {
@@ -547,6 +540,7 @@ input:focus, textarea:focus {
 
 /* Project section color variations - cool teal/cyan/purple */
 #ambient .card { background: linear-gradient(135deg, rgba(155, 246, 255, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
+#houseband .card { background: linear-gradient(135deg, rgba(255, 214, 168, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
 #facilitation .card { background: linear-gradient(135deg, rgba(189, 178, 255, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
 #glia .card { background: linear-gradient(135deg, rgba(168, 255, 214, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
 #morocco .card { background: linear-gradient(135deg, rgba(255, 183, 255, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
