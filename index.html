@@ -56,12 +56,12 @@
           </div>
           
           <!-- Overlaid content -->
-          <div style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 600px; padding: 60px 20px 80px; text-align: center;">
-            <h2 style="font-size: clamp(32px, 5vw, 52px); line-height: 1.2; margin: 0 0 150px 0; font-weight: 400; max-width: 900px; text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);">
+          <div style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly; min-height: 600px; padding: 80px 20px; text-align: center;">
+            <h2 style="font-size: clamp(32px, 5vw, 52px); line-height: 1.2; margin: 0; font-weight: 400; max-width: 900px; text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7), 0 1px 4px rgba(0, 0, 0, 0.5); letter-spacing: 0.005em; color: rgba(255, 255, 255, 0.97);">
               Musician and music technologist working in live performance, facilitation, and creative systems.
             </h2>
             
-            <div class="chips chips-hero">
+            <div class="chips chips-hero" style="margin-top: 120px;">
               <a class="chip" href="#ambient">Ambient / electronic</a>
               <a class="chip" href="#glia">Glia - neural network instrument</a>
               <a class="chip" href="#houseband">Professional performance</a>
@@ -75,7 +75,7 @@
 
 
         <!-- Scroll indicator -->
-        <div id="explore-indicator" style="text-align: center; margin: 68px auto 85px; max-width: 290px; transition: opacity 0.3s ease, transform 0.3s ease;">
+        <div id="explore-indicator" style="text-align: center; margin: 40px auto 60px; max-width: 290px; transition: opacity 0.3s ease, transform 0.3s ease;">
           <a href="#ambient" style="display: inline-flex; align-items: center; gap: 10px; padding: 20px 29px; border-radius: 999px; background: linear-gradient(135deg, rgba(100, 240, 255, 0.24), rgba(100, 240, 255, 0.15)); border: 2px solid rgba(100, 240, 255, 0.51); box-shadow: 0 2px 16px rgba(100, 240, 255, 0.21); text-decoration: none; transition: all 0.25s ease;">
             <div style="font-family: 'Megrim', system-ui; font-size: 16px; color: rgba(255, 255, 255, 0.95); letter-spacing: 0.02em;">
               Explore Projects
@@ -324,10 +324,16 @@
       </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <!-- Scroll Controls (appear together) -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top" style="bottom: 92px;">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10 4L10 16M10 4L4 10M10 4L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <button id="scroll-down" class="back-to-top" aria-label="Scroll down" title="Scroll down" style="bottom: 32px;">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 16L10 4M10 16L16 10M10 16L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>
 

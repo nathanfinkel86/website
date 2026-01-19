@@ -40,15 +40,22 @@
     });
   });
 
-  // Back to top button
+  // Back to top button and scroll down button - appear together as scroll controls
   const backToTopBtn = document.getElementById('back-to-top');
-  if (backToTopBtn) {
-    // Show/hide button based on scroll position
+  const scrollDownBtn = document.getElementById('scroll-down');
+  
+  if (backToTopBtn && scrollDownBtn) {
+    // Show/hide both buttons together once scrolled down past explore indicator
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 600) {
+      const scrollY = window.scrollY;
+      
+      // Both appear together when scrolled down past 400px
+      if (scrollY > 400) {
         backToTopBtn.classList.add('visible');
+        scrollDownBtn.classList.add('visible');
       } else {
         backToTopBtn.classList.remove('visible');
+        scrollDownBtn.classList.remove('visible');
       }
     });
 
@@ -73,6 +80,19 @@
       }
       
       requestAnimationFrame(scroll);
+    });
+  }
+  
+  // Scroll down button click handler
+  if (scrollDownBtn) {
+    scrollDownBtn.addEventListener('click', () => {
+      const viewportHeight = window.innerHeight;
+      const targetScroll = window.scrollY + viewportHeight;
+      
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth'
+      });
     });
   }
 
@@ -112,29 +132,17 @@
   // Hide/show explore indicator based on scroll position
   const exploreIndicator = document.getElementById('explore-indicator');
   if (exploreIndicator) {
-    let lastScrollY = window.scrollY;
-    let hasScrolledDown = false; // Track if user has scrolled down
-    
     window.addEventListener('scroll', () => {
       const currentScrollY = window.scrollY;
-      const scrollingUp = currentScrollY < lastScrollY;
-      const nearTop = currentScrollY < 200; // Hide when within 200px of top
       
-      // Track if user has scrolled down past the threshold
-      if (currentScrollY >= 200) {
-        hasScrolledDown = true;
-      }
-      
-      // Only hide when scrolling UP, near top, AND user has previously scrolled down
-      if (nearTop && scrollingUp && hasScrolledDown) {
-        exploreIndicator.style.opacity = '0';
-        exploreIndicator.style.transform = 'translateY(-10px)';
-      } else if (currentScrollY >= 200 || !hasScrolledDown) {
+      // Show at top, hide when scrolled down past 400px (inverse of back-to-top button)
+      if (currentScrollY < 400) {
         exploreIndicator.style.opacity = '1';
         exploreIndicator.style.transform = 'translateY(0)';
+      } else {
+        exploreIndicator.style.opacity = '0';
+        exploreIndicator.style.transform = 'translateY(-10px)';
       }
-      
-      lastScrollY = currentScrollY;
     }, { passive: true });
   }
 
