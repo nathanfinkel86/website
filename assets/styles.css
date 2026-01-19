@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
 
 :root {
   --bg: #0a0f14;
@@ -29,7 +31,7 @@
 html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: 'Crimson Text', 'Garamond', 'Didot', Georgia, serif;
+  font-family: "Poiret One", sans-serif;
   color: var(--text);
   background:
     /* gentle paisley-like overlay (very subtle) */
@@ -155,6 +157,11 @@ section[id] {
   display: flex;
   gap: 8px;
   align-items: center;
+  font-family: "Iceland", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  font-size: 13px;
 }
 
 .btn {
@@ -207,7 +214,7 @@ main { padding: 34px 0 72px; }
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 12px;
-  align-items: start;
+  align-items: stretch;
 }
 .card {
   position: relative;
@@ -283,6 +290,8 @@ main { padding: 34px 0 72px; }
   height: 100%;
   object-fit: contain;
   object-position: center;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
 }
 
 .hero-top-section .hero-image {
@@ -317,6 +326,11 @@ h1 {
   margin: 0 0 10px;
   font-size: clamp(28px, 3vw, 40px);
   letter-spacing: -0.4px;
+  font-family: "Megrim", system-ui;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: "Megrim", system-ui;
 }
 .lede { 
   color: var(--muted); 
@@ -337,8 +351,9 @@ h1 {
   border-radius: 999px;
   border: 2px solid rgba(155, 246, 255, 0.5);
   background: linear-gradient(135deg, rgba(155, 246, 255, 0.18), rgba(155, 246, 255, 0.10));
+  font-family: "Iceland", sans-serif;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   transition: all 0.25s ease;
@@ -385,6 +400,7 @@ h1 {
 
 .section {
   margin-top: 18px;
+  margin-bottom: 80px;
 }
 .section h2 {
   margin: 0 0 12px;
@@ -548,6 +564,18 @@ input:focus, textarea:focus {
 #glia .card { background: linear-gradient(135deg, rgba(168, 255, 214, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
 #morocco .card { background: linear-gradient(135deg, rgba(255, 183, 255, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
 
+/* Fade-in animations */
+.fade-in-target {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-target.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Back to Top Button */
 .back-to-top {
   position: fixed;
@@ -632,13 +660,16 @@ input:focus, textarea:focus {
     order: 1; /* Text first on mobile */
   }
   
-  .chips-hero {
-    gap: 8px;
+  .chips, .chips-hero {
+    gap: 10px;
+    justify-content: center;
   }
   
   .chip {
-    padding: 10px 16px;
+    padding: 10px 18px;
     font-size: 15px;
+    min-width: fit-content;
+    text-align: center;
   }
 
   /* Adjust background position for tablet/mobile */

@@ -60,5 +60,36 @@
       });
     });
   }
+
+  // Fade-in animations on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+        observer.unobserve(entry.target); // Only animate once
+      }
+    });
+  }, observerOptions);
+
+  // Observe all sections, cards, and items
+  document.querySelectorAll('.section, .card, .item').forEach(el => {
+    el.classList.add('fade-in-target');
+    observer.observe(el);
+  });
+
+  // Subtle parallax on hero image
+  const heroImage = document.querySelector('.hero-image img');
+  if (heroImage) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const rate = scrolled * 0.05; // Very subtle - only 5% of scroll
+      heroImage.style.transform = `translateY(${rate}px)`;
+    }, { passive: true });
+  }
 })();
 

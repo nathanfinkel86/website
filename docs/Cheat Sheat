@@ -1,5 +1,67 @@
 # Website Structure Cheat Sheet
 
+## Quick Commands
+
+### Start Local Server
+```bash
+cd music-website
+lsof -ti:8000 | xargs kill -9 2>/dev/null; python3 -m http.server 8000
+```
+Or use the shortcut:
+```bash
+serve
+```
+Then visit: http://localhost:8000
+
+### View Live Site
+https://nathanfinkel86.github.io/website/
+
+---
+
+## Git Workflow
+
+### Basic Workflow
+```bash
+# First, add the changes
+git add .
+
+# Then commit
+git commit -m "COMMENT HERE"
+
+# Then push
+git push origin main
+```
+
+### Using the Shortcut
+```bash
+gc "Your commit message here"
+git push
+```
+
+### Check Status
+```bash
+cd "/Users/nathanfinkel/Documents/Admin - Cursor/music-website"
+git status                          # Check what's changed
+git add .                           # Stage everything
+git commit -m "Your message"
+git push origin main                # Push to remote
+```
+
+### Example: Full Workflow
+```bash
+git status                          # See what changed
+git add .                           # Stage all changes
+git commit -m "Refactor: reorganize codebase structure
+
+- Move images to assets/images/ with categories     
+- Rename p/ to pages/
+- Standardize filenames
+- Add .gitignore"
+git push origin main                # Push to remote
+```
+
+---
+
 ## Key Changes (Jan 19, 2026)
 
 ### Projects.html - Now the main hub
@@ -19,6 +81,8 @@
 Home → Chip → Project (with embedded media) ✓
 Home → "Listen & Watch" → Music page (clean showcase) → Links to projects ✓
 ```
+
+---
 
 ## How to Add Your Media
 
@@ -151,14 +215,72 @@ Or look for HTML comments like:
 - Make sure your Python server is running (`serve` command)
 - Try opening in an incognito/private window to rule out cache issues
 
-## Git Shortcuts
+---
 
-In your terminal, you now have:
-- `gc "commit message"` - adds all files + commits
-- `serve` - starts local web server
+## Terminal Shortcuts (Defined in ~/.zshrc)
 
-## Quick Commits
-```bash
-gc "Updated media embeds"
-git push
+- `gc "commit message"` - Adds all files + commits with message
+- `serve` - Starts local web server on port 8000
+
+---
+
+## File Structure
+
 ```
+music-website/
+├── index.html          # Landing page (hero + chips)
+├── about.html          # Bio + background
+├── projects.html       # Main hub with descriptions + embedded media
+├── music.html          # Clean showcase linking back to projects
+├── shows.html          # Calendar + recent highlights
+├── contact.html        # Form + Instagram
+├── assets/
+│   ├── styles.css      # All styling
+│   ├── site.js         # JavaScript
+│   ├── images/
+│   │   ├── hero/
+│   │   ├── performances/
+│   │   └── portraits/
+│   └── audio/
+└── docs/
+    └── Cheat Sheat     # This file!
+```
+
+---
+
+## Useful Git Commands
+
+```bash
+git status              # See what changed
+git log --oneline       # See commit history
+git diff                # See line-by-line changes
+git add filename.html   # Stage specific file
+git add .               # Stage all changes
+git commit -m "msg"     # Commit with message
+git push                # Push to GitHub
+git pull                # Pull latest changes
+```
+
+---
+
+## Browser Testing
+
+### Hard Refresh (Clear Cache)
+- **Mac**: Cmd + Shift + R
+- **Windows/Linux**: Ctrl + Shift + R
+- **Alternative**: Open DevTools (F12) → Right-click refresh → "Empty Cache and Hard Reload"
+
+### Check Console for Errors
+1. Press F12 (or Cmd + Option + I on Mac)
+2. Click "Console" tab
+3. Look for red error messages
+
+---
+
+## Notes
+
+- Python server must be running to view site locally
+- GitHub Pages URL: https://nathanfinkel86.github.io/website/
+- Always test locally before pushing to GitHub
+- Use `gc` shortcut for quick commits
+- Remember to `git push` after committing!
