@@ -45,7 +45,7 @@
   if (backToTopBtn) {
     // Show/hide button based on scroll position
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 600) {
         backToTopBtn.classList.add('visible');
       } else {
         backToTopBtn.classList.remove('visible');
@@ -54,10 +54,25 @@
 
     // Smooth scroll to top when clicked
     backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      const duration = 1000; // milliseconds - lower = faster (try 400-1000)
+      const start = window.scrollY;
+      const startTime = performance.now();
+      
+      function scroll(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function (ease-out)
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        
+        window.scrollTo(0, start * (1 - easeOut));
+        
+        if (progress < 1) {
+          requestAnimationFrame(scroll);
+        }
+      }
+      
+      requestAnimationFrame(scroll);
     });
   }
 
