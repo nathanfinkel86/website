@@ -1,0 +1,50 @@
+[
+  {
+    "id": "example-glia-show",
+    "title": "Ambient / Electronic Set with Glia",
+    "date": "2026-03-15",
+    "venue": "Example Venue",
+    "location": "London, UK",
+    "description": "Immersive ambient/electronic performance featuring live improvisation with Glia neural network instrument.",
+    "tags": ["ambient", "glia"],
+    "ticketUrl": "https://dandelion.events/nathanfinkelmusic/example-event",
+    "status": "upcoming",
+    "imageUrl": ""
+  },
+  {
+    "id": "example-workshop",
+    "title": "Inclusive Music Workshop",
+    "date": "2026-04-20",
+    "venue": "Community Center",
+    "location": "Manchester, UK",
+    "description": "Structured jam session for mixed-ability groups. No experience required.",
+    "tags": ["facilitation"],
+    "ticketUrl": "https://dandelion.events/nathanfinkelmusic/workshop",
+    "status": "upcoming",
+    "imageUrl": ""
+  },
+  {
+    "id": "past-december-2025",
+    "title": "Glia UK Tour",
+    "date": "2025-12-15",
+    "venue": "Various Venues",
+    "location": "UK",
+    "description": "Successful performances using real-time MIDI/audio integration with Glia running as a VST in a DAW.",
+    "tags": ["glia", "ambient"],
+    "ticketUrl": "",
+    "status": "past",
+    "imageUrl": ""
+  },
+  {
+    "id": "past-borderland-2025",
+    "title": "Jam Camp — Borderland",
+    "date": "2025-08-01",
+    "venue": "Borderland",
+    "location": "Sweden",
+    "description": "Camp Manager (50-person camp): leadership, pastoral care, inclusive jams. Musical Director & Curator for main burn performance.",
+    "tags": ["facilitation", "ambient"],
+    "ticketUrl": "",
+    "status": "past",
+    "imageUrl": ""
+  }
+]

@@ -111,9 +111,7 @@ src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/REPLACE_WITH_
 Replace `REPLACE_WITH_AMBIENT_TRACK` with your full track URL:
 ```html
 src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nathan-finkel/ambient-set-dec-2025&color=...
-```
-
-**Important**: Keep everything else the same - just replace the placeholder text!
+```**Important**: Keep everything else the same - just replace the placeholder text!
 
 #### Step 4: Test it
 1. Save the file
