@@ -71,7 +71,9 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target); // Only animate once
+      } else {
+        // Remove fade-in when scrolling back up so it can trigger again
+        entry.target.classList.remove('fade-in');
       }
     });
   }, observerOptions);

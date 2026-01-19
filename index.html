@@ -57,10 +57,9 @@
           
           <!-- Overlaid content -->
           <div style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 600px; padding: 60px 20px 80px; text-align: center;">
-            <h2 style="font-size: clamp(32px, 5vw, 52px); line-height: 1.2; margin: 0 0 30px 0; font-weight: 400; max-width: 900px; text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);">
+            <h2 style="font-size: clamp(32px, 5vw, 52px); line-height: 1.2; margin: 0 0 40px 0; font-weight: 400; max-width: 900px; text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);">
               Musician and music technologist working in live performance, facilitation, and creative systems.
             </h2>
-            <div style="width: 80px; height: 1px; background: rgba(155, 246, 255, 0.5); margin: 0 auto 30px;"></div>
             
             <div class="chips chips-hero">
               <a class="chip" href="#ambient">Ambient / electronic</a>
@@ -92,14 +91,14 @@
 
         <!-- Scroll indicator -->
         <div id="explore-indicator" style="text-align: center; margin: 68px auto 85px; max-width: 290px; transition: opacity 0.3s ease, transform 0.3s ease;">
-          <div style="display: inline-flex; align-items: center; gap: 10px; padding: 20px 29px; border-radius: 999px; background: linear-gradient(135deg, rgba(100, 240, 255, 0.24), rgba(100, 240, 255, 0.15)); border: 2px solid rgba(100, 240, 255, 0.51); box-shadow: 0 2px 16px rgba(100, 240, 255, 0.21);">
+          <a href="#ambient" style="display: inline-flex; align-items: center; gap: 10px; padding: 20px 29px; border-radius: 999px; background: linear-gradient(135deg, rgba(100, 240, 255, 0.24), rgba(100, 240, 255, 0.15)); border: 2px solid rgba(100, 240, 255, 0.51); box-shadow: 0 2px 16px rgba(100, 240, 255, 0.21); text-decoration: none; transition: all 0.25s ease;">
             <div style="font-family: 'Megrim', system-ui; font-size: 16px; color: rgba(255, 255, 255, 0.95); letter-spacing: 0.02em;">
               Explore Projects
             </div>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.8;">
               <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </div>
+          </a>
         </div>
 
         <section class="section" id="ambient" style="padding-top: 100px;">     
@@ -109,28 +108,82 @@
             
             <!-- Embedded Media -->
             <div style="margin: 24px 0;">
-              <h3 style="margin-bottom: 12px;">Listen</h3>
-              <div class="embed">
-                <iframe
-                  title="SoundCloud player — Ambient/Electronic"
-                  scrolling="no"
-                  frameborder="no"
-                  allow="autoplay"
-                  src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/REPLACE_WITH_AMBIENT_TRACK&color=%239bf6ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-                ></iframe>
-              </div>
-            </div>
-
-            <div class="list">
-              <div class="item">
-                <div class="kicker">Format</div>
-                <h3>Live set</h3>
-                <p>Hybrid analogue/digital approach, designed for intimate venues and community events.</p>
-              </div>
-              <div class="item">
-                <div class="kicker">Optional</div>
-                <h3>Collaborative / participatory</h3>
-                <p>Can expand into structured jams or audience-inclusive moments depending on context.</p>
+              <h3 style="margin-bottom: 20px;">Listen & Watch</h3>
+              
+              <div style="display: grid; gap: 32px;">
+                <!-- London Night Cafe -->
+                <div>
+                  <h4 style="margin: 0 0 12px 0; font-size: 16px; color: var(--accent);">Live at London Night Cafe — 22/02/25</h4>
+                  
+                  <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Audio</p>
+                  <div class="embed" style="margin-bottom: 16px;">
+                    <iframe
+                      title="SoundCloud player — London Night Cafe"
+                      scrolling="no"
+                      frameborder="no"
+                      allow="autoplay"
+                      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2047192156&color=%239bf6ff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+                    ></iframe>
+                  </div>
+                  
+                  <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Video</p>
+                  <div style="max-width: 75%; margin: 0 auto;">
+                    <div class="embed" style="aspect-ratio: 16/9;">
+                      <iframe 
+                        title="YouTube player — London Night Cafe"
+                        src="https://www.youtube.com/embed/Eox3M_Y-p6M" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                        style="width: 100%; height: 100%;"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Info section between sets -->
+                <div class="list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                  <div class="item">
+                    <div class="kicker">Format</div>
+                    <h3>Live set</h3>
+                    <p>Hybrid analogue/digital approach, designed for intimate venues and community events.</p>
+                  </div>
+                  <div class="item">
+                    <div class="kicker">Optional</div>
+                    <h3>Collaborative / participatory</h3>
+                    <p>Can expand into structured jams or audience-inclusive moments depending on context.</p>
+                  </div>
+                </div>
+                
+                <!-- New Year's Day 2025 -->
+                <div>
+                  <h4 style="margin: 0 0 12px 0; font-size: 16px; color: var(--accent);">New Year's Day 2025</h4>
+                  
+                  <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Audio</p>
+                  <div class="embed" style="margin-bottom: 16px;">
+                    <iframe
+                      title="SoundCloud player — New Year's Day 2025"
+                      scrolling="no"
+                      frameborder="no"
+                      allow="autoplay"
+                      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nathan-finkel/soundbath-new-years-day-2025&color=%239bf6ff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+                    ></iframe>
+                  </div>
+                  
+                  <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Video</p>
+                  <div style="max-width: 75%; margin: 0 auto;">
+                    <div class="embed" style="aspect-ratio: 16/9;">
+                      <iframe 
+                        title="YouTube player — New Year's Day 2025"
+                        src="https://www.youtube.com/embed/TmniqoZ1NrQ" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                        style="width: 100%; height: 100%;"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
