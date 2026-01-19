@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
 :root {
   --bg: #0a0f14;
   --panel: rgba(255, 255, 255, 0.06);
@@ -31,12 +33,12 @@ body {
   color: var(--text);
   background:
     /* gentle paisley-like overlay (very subtle) */
-    radial-gradient(22px 18px at 16% 22%, rgba(155, 246, 255, 0.08), transparent 70%),
-    radial-gradient(26px 20px at 18% 24%, rgba(0, 0, 0, 0.12), transparent 72%),
-    radial-gradient(22px 18px at 46% 38%, rgba(189, 178, 255, 0.08), transparent 70%),
-    radial-gradient(26px 20px at 48% 40%, rgba(0, 0, 0, 0.10), transparent 72%),
-    radial-gradient(22px 18px at 76% 26%, rgba(155, 246, 255, 0.08), transparent 70%),
-    radial-gradient(26px 20px at 78% 28%, rgba(0, 0, 0, 0.10), transparent 72%),
+    radial-gradient(22px 18px at 16% 22%, rgba(155, 246, 255, 0.15), transparent 70%),
+    radial-gradient(26px 20px at 18% 24%, rgba(0, 0, 0, 0.25), transparent 72%),
+    radial-gradient(22px 18px at 46% 38%, rgba(189, 178, 255, 0.15), transparent 70%),
+    radial-gradient(26px 20px at 48% 40%, rgba(0, 0, 0, 0.30), transparent 72%),
+    radial-gradient(22px 18px at 76% 26%, rgba(155, 246, 255, 0.15), transparent 70%),
+    radial-gradient(26px 20px at 78% 28%, rgba(0, 0, 0, 0.40), transparent 72%),
     /* cool teal/cyan gradients */
     radial-gradient(1200px 800px at 18% 12%, rgba(155, 246, 255, 0.12), transparent 60%),
     radial-gradient(900px 700px at 84% 22%, rgba(189, 178, 255, 0.10), transparent 58%),
@@ -279,7 +281,7 @@ main { padding: 34px 0 72px; }
 .hero-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
@@ -356,8 +358,10 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
-  margin-top: 24px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+  padding-top: 4px;
 }
 
 /* Non-clickable chips (decorative) */
@@ -372,12 +376,12 @@ h1 {
   color: var(--muted);
 }
 
-/* Chip color variations - matches project section colors */
-.chip[href*="ambient"] { background: linear-gradient(135deg, rgba(155, 246, 255, 0.22), rgba(155, 246, 255, 0.12)); border-color: rgba(155, 246, 255, 0.5); }
-.chip[href*="houseband"] { background: linear-gradient(135deg, rgba(255, 214, 168, 0.22), rgba(255, 214, 168, 0.12)); border-color: rgba(255, 214, 168, 0.5); }
-.chip[href*="facilitation"] { background: linear-gradient(135deg, rgba(189, 178, 255, 0.22), rgba(189, 178, 255, 0.12)); border-color: rgba(189, 178, 255, 0.5); }
-.chip[href*="glia"] { background: linear-gradient(135deg, rgba(168, 255, 214, 0.22), rgba(168, 255, 214, 0.12)); border-color: rgba(168, 255, 214, 0.5); }
-.chip[href*="morocco"] { background: linear-gradient(135deg, rgba(255, 183, 255, 0.22), rgba(255, 183, 255, 0.12)); border-color: rgba(255, 183, 255, 0.5); }
+/* Chip color variations - consistent across pages by topic */
+.chip[href*="ambient"] { background: var(--color-1); border-color: var(--border-1); }
+.chip[href*="facilitation"] { background: var(--color-2); border-color: var(--border-2); }
+.chip[href*="glia"] { background: var(--color-3); border-color: var(--border-3); }
+.chip[href*="morocco"] { background: var(--color-4); border-color: var(--border-4); }
+.chip[href*="rig"] { background: var(--color-1); border-color: var(--border-1); }
 
 .section {
   margin-top: 18px;
@@ -540,7 +544,6 @@ input:focus, textarea:focus {
 
 /* Project section color variations - cool teal/cyan/purple */
 #ambient .card { background: linear-gradient(135deg, rgba(155, 246, 255, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
-#houseband .card { background: linear-gradient(135deg, rgba(255, 214, 168, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
 #facilitation .card { background: linear-gradient(135deg, rgba(189, 178, 255, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
 #glia .card { background: linear-gradient(135deg, rgba(168, 255, 214, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
 #morocco .card { background: linear-gradient(135deg, rgba(255, 183, 255, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
@@ -548,6 +551,42 @@ input:focus, textarea:focus {
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
+  
+  /* Mobile hero layout */
+  .hero-top-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+    min-height: auto;
+  }
+  
+  .hero-top-section .hero-image-container {
+    height: auto;
+    order: 2; /* Image below text on mobile */
+  }
+  
+  .hero-top-section .hero-image {
+    height: auto;
+    aspect-ratio: 4/3;
+  }
+  
+  .hero-top-section .hero-image img {
+    object-fit: cover;
+  }
+  
+  .hero-top-section .card {
+    height: auto;
+    order: 1; /* Text first on mobile */
+  }
+  
+  .chips-hero {
+    gap: 8px;
+  }
+  
+  .chip {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
 
   /* Adjust background position for tablet/mobile */
   .hero-background {
@@ -651,9 +690,7 @@ input:focus, textarea:focus {
 .accordion-header:hover {
   background: rgba(11, 15, 20, 0.80);
   border-color: rgba(155, 246, 255, 0.35);
-}
-
-.accordion-toggle {
+}.accordion-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
