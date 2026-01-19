@@ -40,29 +40,31 @@
       <div class="hero-overlay"></div>
       <div class="container hero-content-wrapper">
         
-        <!-- Image and content opposite each other -->
-        <div class="hero-top-section">
-          <div class="hero-image-container">
-            <aside class="hero-image" style="padding: 0; overflow: hidden;">
-              <img 
-                src="assets/images/performances/nathan-ambient-show-1.1.jpg" 
-                alt="Nathan Finkel performing ambient/electronic set with guitar and synths"
-              />
-            </aside>
+        <!-- Hero with overlaid text -->
+        <div style="position: relative; min-height: 600px; border-radius: 16px; overflow: hidden; margin-bottom: 40px;">
+          <!-- Background image -->
+          <div style="position: absolute; inset: 0;">
+            <img 
+              src="assets/images/performances/nathan-ambient-show-1.1.jpg" 
+              alt="Nathan Finkel performing ambient/electronic set with guitar and synths"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center;"
+            />
+            <!-- Dark overlay for text readability -->
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 15, 20, 0.3) 0%, rgba(10, 15, 20, 0.85) 100%);"></div>
           </div>
           
-          <div class="card pad" style="text-align: center;">
-            <h2 style="font-size: 28px; line-height: 1.3; margin: 0 0 24px 0; font-weight: 600;">
+          <!-- Overlaid content -->
+          <div style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 600px; padding: 60px 20px; text-align: center;">
+            <h2 style="font-size: clamp(32px, 5vw, 52px); line-height: 1.2; margin: 0 0 30px 0; font-weight: 400; max-width: 900px;">
               Musician and music technologist working in live performance, facilitation, and creative systems.
             </h2>
-            <div style="width: 60px; height: 1px; background: rgba(155, 246, 255, 0.3); margin: 0 auto 20px;"></div>
-            <p style="margin: 0 0 20px 0; font-size: 18px; line-height: 2; color: rgba(255, 255, 255, 0.70); letter-spacing: 0.015em; font-weight: 600;">         
+            <div style="width: 80px; height: 1px; background: rgba(155, 246, 255, 0.5); margin: 0 auto 30px;"></div>
+            <p style="margin: 0 0 40px 0; font-size: 20px; line-height: 2; color: rgba(255, 255, 255, 0.85); letter-spacing: 0.015em; max-width: 800px;">         
               Immersive sets that hold space for rest.<br>
-              Hybrid analogue/digital rig. <br>
+              Hybrid analogue/digital rig.<br>
               Inclusive workshops to make music accessible.<br>
-              Performance and facilitation. <br>
-              Glia: collaboration on neural network instrument.<br>
-              
+              Performance and facilitation.<br>
+              Glia: collaboration on neural network instrument.
             </p>
             
             <div class="chips chips-hero">
