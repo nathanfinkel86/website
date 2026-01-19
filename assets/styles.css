@@ -548,9 +548,62 @@ input:focus, textarea:focus {
 #glia .card { background: linear-gradient(135deg, rgba(168, 255, 214, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
 #morocco .card { background: linear-gradient(135deg, rgba(255, 183, 255, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); }
 
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(155, 246, 255, 0.25), rgba(155, 246, 255, 0.15));
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(155, 246, 255, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(155, 246, 255, 0.2);
+  z-index: 1000;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: linear-gradient(135deg, rgba(155, 246, 255, 0.4), rgba(155, 246, 255, 0.25));
+  border-color: rgba(155, 246, 255, 0.7);
+  box-shadow: 0 6px 28px rgba(155, 246, 255, 0.35);
+  transform: translateY(-3px);
+}
+
+.back-to-top:active {
+  transform: translateY(-1px);
+}
+
+.back-to-top svg {
+  display: block;
+}
+
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
+  
+  /* Back to top button - smaller on mobile */
+  .back-to-top {
+    width: 44px;
+    height: 44px;
+    bottom: 20px;
+    right: 20px;
+  }
   
   /* Mobile hero layout */
   .hero-top-section {

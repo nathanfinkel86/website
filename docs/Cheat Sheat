@@ -1,29 +1,164 @@
-Cheat Sheat 
-cd music-website && 
-lsof -ti:8000 | xargs kill -9 2>/dev/null; cd "/Users/nathanfinkel/Documents/Admin - Cursor/music-website" && python3 -m http.server 8000http://localhost:8000
-https://nathanfinkel86.github.io/website/music.html
-k
---------------------------------
+# Website Structure Cheat Sheet
 
-# First, add the changes
-git add .
+## Key Changes (Jan 19, 2026)
 
-# Then commit
-git commit -m "COMMENT HERE"
+### Projects.html - Now the main hub
+- **Embedded media directly in each project section**
+- Each project now has Listen/Watch sections inline
+- Replace placeholder URLs with your SoundCloud/YouTube links
+- This is now a one-stop shop: description + media together
 
-# Then push
-git push origin main    
+### Music.html - Simplified showcase
+- **Removed redundant chips**
+- Added section anchors: #ambient, #glia, #professional
+- Links back to projects.html for more context
+- Clean media showcase with minimal navigation
 
+### User Journey (Improved)
+```
+Home → Chip → Project (with embedded media) ✓
+Home → "Listen & Watch" → Music page (clean showcase) → Links to projects ✓
+```
 
---------------------------------
+## How to Add Your Media
 
-cd "/Users/nathanfinkel/Documents/Admin - Cursor/music-website"
-git status                          # Check what's changed
-git add .                           # Stage everything
-git commit -m "Refactor: reorganize codebase structure
+### SoundCloud Embeds
 
-- Move images to assets/images/ with categories     
-- Rename p/ to pages/
-- Standardize filenames
-- Add .gitignore"
-git push origin main                # Push to remote
+#### Step 1: Get your track URL
+1. Go to your track on SoundCloud
+2. Copy the full URL from your browser (e.g., `https://soundcloud.com/nathan-finkel/ambient-set-dec-2025`)
+
+#### Step 2: Find the placeholder in your HTML
+Open the file where you want to add the track:
+- `projects.html` - For embedded media in project sections
+- `music.html` - For the music showcase page
+
+Search for the placeholder text (Cmd/Ctrl + F):
+- `REPLACE_WITH_AMBIENT_TRACK` - for ambient/electronic work
+- `REPLACE_WITH_GLIA_TRACK` - for Glia performances
+- Or find the section you want to update
+
+#### Step 3: Replace the placeholder
+Find this part of the code:
+```html
+src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/REPLACE_WITH_AMBIENT_TRACK&color=...
+```
+
+Replace `REPLACE_WITH_AMBIENT_TRACK` with your full track URL:
+```html
+src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nathan-finkel/ambient-set-dec-2025&color=...
+```
+
+**Important**: Keep everything else the same - just replace the placeholder text!
+
+#### Step 4: Test it
+1. Save the file
+2. Refresh your browser (hard refresh: Cmd/Ctrl + Shift + R)
+3. The SoundCloud player should now load your track
+
+---
+
+### YouTube/Vimeo Videos
+
+#### Step 1: Get your video embed code or ID
+
+**For YouTube:**
+1. Go to your video on YouTube
+2. Click "Share" → "Embed"
+3. Copy the video ID from the URL (e.g., `dQw4w9WgXcQ` from `youtube.com/watch?v=dQw4w9WgXcQ`)
+
+**For Vimeo:**
+1. Go to your video on Vimeo
+2. Click "Share"
+3. Copy the video ID (e.g., `123456789` from `vimeo.com/123456789`)
+
+#### Step 2: Find the video placeholder
+Search for:
+```html
+<p class="note">Video placeholder — Add
+```
+
+Or look for HTML comments like:
+```html
+<!-- Example:
+<iframe src="https://www.youtube.com/embed/VIDEO_ID"
+-->
+```
+
+#### Step 3: Replace with your embed code
+
+**For YouTube:**
+```html
+<div class="embed">
+  <iframe 
+    src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen
+    style="width: 100%; height: 315px; border-radius: 12px;">
+  </iframe>
+</div>
+```
+
+**For Vimeo:**
+```html
+<div class="embed">
+  <iframe 
+    src="https://player.vimeo.com/video/YOUR_VIDEO_ID" 
+    frameborder="0" 
+    allow="autoplay; fullscreen; picture-in-picture" 
+    allowfullscreen
+    style="width: 100%; height: 315px; border-radius: 12px;">
+  </iframe>
+</div>
+```
+
+#### Step 4: Test it
+1. Save the file
+2. Hard refresh your browser (Cmd/Ctrl + Shift + R)
+3. Video should load and be playable
+
+---
+
+### Quick Reference: Where to Add Media
+
+| Content Type | File | Section ID | What to Update |
+|-------------|------|------------|----------------|
+| Ambient audio | `projects.html` | `#ambient` | REPLACE_WITH_AMBIENT_TRACK |
+| Glia audio | `projects.html` | `#glia` | REPLACE_WITH_GLIA_TRACK |
+| Glia video | `projects.html` | `#glia` | Video placeholder comment |
+| Professional video | `projects.html` | `#houseband` | Video placeholder comment |
+| Workshop video | `projects.html` | `#facilitation` | Video placeholder comment |
+| Morocco audio | `projects.html` | `#morocco` | Audio placeholder comment |
+| Music page embeds | `music.html` | Various sections | REPLACE_WITH_*_TRACK |
+
+---
+
+### Troubleshooting
+
+**SoundCloud player not showing?**
+- Make sure your track is set to "Public" on SoundCloud
+- Check you didn't accidentally delete any other parts of the embed code
+- Try a hard refresh (Cmd/Ctrl + Shift + R)
+
+**Video not loading?**
+- Check the video is public/unlisted (not private)
+- Verify you copied the video ID correctly
+- Make sure you closed all HTML tags properly
+
+**Still not working?**
+- Check the browser console for errors (F12 → Console tab)
+- Make sure your Python server is running (`serve` command)
+- Try opening in an incognito/private window to rule out cache issues
+
+## Git Shortcuts
+
+In your terminal, you now have:
+- `gc "commit message"` - adds all files + commits
+- `serve` - starts local web server
+
+## Quick Commits
+```bash
+gc "Updated media embeds"
+git push
+```
