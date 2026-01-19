@@ -96,16 +96,23 @@
   const exploreIndicator = document.getElementById('explore-indicator');
   if (exploreIndicator) {
     let lastScrollY = window.scrollY;
+    let hasScrolledDown = false; // Track if user has scrolled down
     
     window.addEventListener('scroll', () => {
       const currentScrollY = window.scrollY;
       const scrollingUp = currentScrollY < lastScrollY;
       const nearTop = currentScrollY < 200; // Hide when within 200px of top
       
-      if (nearTop && scrollingUp) {
+      // Track if user has scrolled down past the threshold
+      if (currentScrollY >= 200) {
+        hasScrolledDown = true;
+      }
+      
+      // Only hide when scrolling UP, near top, AND user has previously scrolled down
+      if (nearTop && scrollingUp && hasScrolledDown) {
         exploreIndicator.style.opacity = '0';
         exploreIndicator.style.transform = 'translateY(-10px)';
-      } else if (currentScrollY >= 200) {
+      } else if (currentScrollY >= 200 || !hasScrolledDown) {
         exploreIndicator.style.opacity = '1';
         exploreIndicator.style.transform = 'translateY(0)';
       }
