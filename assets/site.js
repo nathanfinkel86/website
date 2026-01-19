@@ -224,6 +224,19 @@
       'morocco': 'index.html#morocco'
     };
     
+    // Color palette for cards based on primary tag
+    const cardStyles = {
+      'ambient': 'border-color: rgba(100, 240, 255, 0.25); background: linear-gradient(135deg, rgba(100, 240, 255, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(100, 240, 255, 0.08);',
+      'facilitation': 'border-color: rgba(180, 150, 255, 0.25); background: linear-gradient(135deg, rgba(180, 150, 255, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(180, 150, 255, 0.08);',
+      'glia': 'border-color: rgba(120, 255, 180, 0.22); background: linear-gradient(135deg, rgba(120, 255, 180, 0.05), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(120, 255, 180, 0.08);',
+      'morocco': 'border-color: rgba(255, 140, 220, 0.25); background: linear-gradient(135deg, rgba(255, 140, 220, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(255, 140, 220, 0.08);',
+      'houseband': 'border-color: rgba(140, 200, 255, 0.25); background: linear-gradient(135deg, rgba(140, 200, 255, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(140, 200, 255, 0.08);'
+    };
+    
+    // Use primary tag (first tag) for card color
+    const primaryTag = event.tags[0] || 'ambient';
+    const cardStyle = cardStyles[primaryTag] || cardStyles['ambient'];
+    
     const tagsHtml = event.tags.map(tag => 
       `<a class="tag" href="${tagColors[tag] || '#'}">${capitalizeFirst(tag)}</a>`
     ).join('');
@@ -233,7 +246,7 @@
       : '';
     
     return `
-      <div class="item">
+      <div class="item" style="${cardStyle}">
         <div class="kicker">${formattedDate}</div>
         <h3>${event.title}</h3>
         <p style="margin-bottom: 4px;"><strong>${event.venue}</strong> — ${event.location}</p>

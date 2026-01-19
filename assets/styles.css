@@ -33,6 +33,7 @@
 html, body { height: 100%; }
 body {
   margin: 0;
+  padding-top: 60px;
   zoom: 0.9;
   font-family: "Poiret One", sans-serif;
   color: var(--text);
@@ -50,6 +51,7 @@ body {
 .hero-background {
   /* background: url('../assets/images/hero/Website-Background-2026 .png') center 20% / cover no-repeat fixed; */
   position: relative;
+  z-index: 0;
 }
 
 a { 
@@ -78,9 +80,11 @@ a:hover {
 .skip-link:focus { left: 16px; }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 10;
+  left: 0;
+  right: 0;
+  z-index: 1001;
   backdrop-filter: blur(14px);
   background: rgba(11, 15, 20, 0.62);
   border-bottom: 1px solid var(--border);
@@ -228,6 +232,7 @@ main { padding: 34px 0 72px; }
 }
 .card {
   position: relative;
+  z-index: 1;
   background: rgba(11, 15, 20, 0.68);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border);
@@ -252,6 +257,7 @@ main { padding: 34px 0 72px; }
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 0;
   background: linear-gradient(180deg, rgba(10, 15, 20, 0.35) 0%, rgba(10, 15, 20, 0.40) 100%);
 }
 
@@ -439,6 +445,8 @@ h2, h3, h4, h5, h6 {
 .chip[href*="rig"] { background: linear-gradient(135deg, var(--color-1), rgba(100, 240, 255, 0.15)); border-color: var(--border-1); }
 
 .section {
+  position: relative;
+  z-index: 1;
   margin-top: 18px;
   margin-bottom: 80px;
 }
