@@ -59,40 +59,69 @@
       }
     });
 
-    // Smooth scroll to top when clicked
+    // Smooth scroll to previous section when clicked
     backToTopBtn.addEventListener('click', () => {
-      const duration = 1000; // milliseconds - lower = faster (try 400-1000)
-      const start = window.scrollY;
-      const startTime = performance.now();
+      // Find all sections
+      const sections = document.querySelectorAll('.section, section');
+      const currentScroll = window.scrollY;
+      const headerOffset = 80; // Account for fixed header
       
-      function scroll(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        // Easing function (ease-out)
-        const easeOut = 1 - Math.pow(1 - progress, 3);
-        
-        window.scrollTo(0, start * (1 - easeOut));
-        
-        if (progress < 1) {
-          requestAnimationFrame(scroll);
+      // Find the previous section above current scroll position
+      let prevSection = null;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        const sectionTop = section.offsetTop - headerOffset;
+        if (sectionTop < currentScroll - 50) { // 50px threshold to avoid getting stuck
+          prevSection = section;
+          break;
         }
       }
       
-      requestAnimationFrame(scroll);
+      if (prevSection) {
+        window.scrollTo({
+          top: prevSection.offsetTop - headerOffset,
+          behavior: 'smooth'
+        });
+      } else {
+        // If no previous section, scroll to top
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
     });
   }
   
   // Scroll down button click handler
   if (scrollDownBtn) {
     scrollDownBtn.addEventListener('click', () => {
-      const viewportHeight = window.innerHeight;
-      const targetScroll = window.scrollY + viewportHeight;
+      // Find all sections
+      const sections = document.querySelectorAll('.section, section');
+      const currentScroll = window.scrollY;
+      const headerOffset = 80; // Account for fixed header
       
-      window.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth'
-      });
+      // Find the next section below current scroll position
+      let nextSection = null;
+      for (const section of sections) {
+        const sectionTop = section.offsetTop - headerOffset;
+        if (sectionTop > currentScroll + 50) { // 50px threshold to avoid getting stuck
+          nextSection = section;
+          break;
+        }
+      }
+      
+      if (nextSection) {
+        window.scrollTo({
+          top: nextSection.offsetTop - headerOffset,
+          behavior: 'smooth'
+        });
+      } else {
+        // If no next section, scroll to bottom
+        window.scrollTo({
+          top: document.documentElement.scrollHeight,
+          behavior: 'smooth'
+        });
+      }
     });
   }
 
