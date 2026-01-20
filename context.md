@@ -18,7 +18,8 @@
 - **Projects**: `music-website/projects.html` — Main project map with linkable anchors:
   - `#ambient` — Ambient/electronic performance (with `#rig` subanchor)
   - `#professional` — Professional performance experience
-  - `#facilitation` — Workshops & facilitation
+  - `#facilitation` — Workshops, facilitation & tuition
+  - `#technical` — Technical Production & AV services
   - `#glia` — Glia neural network instrument collaboration
   - `#stories` — Synths & Stories (storytelling + ambient soundscapes)
   - `#morocco` — Morocco recording projects (Essaouira/Gnaoua)
@@ -28,11 +29,12 @@
 
 ## Styling / behavior
 - **CSS**: `music-website/assets/styles.css`
-  - Cool teal/cyan/purple/amber color palette with 6 distinct project colors
+  - Cool teal/cyan/purple/amber color palette with 7 distinct project colors
   - Chip color coding: 
     - Ambient (cyan: rgba(100, 240, 255))
     - Professional (sky blue: rgba(140, 200, 255))
     - Facilitation (purple: rgba(180, 150, 255))
+    - Technical Production (coral/orange: rgba(255, 120, 80))
     - GLIA (mint: rgba(120, 255, 180))
     - Synths & Stories (amber: rgba(255, 180, 100))
     - Morocco (magenta: rgba(255, 140, 220))
@@ -49,9 +51,11 @@
 
 ## Content & copy
 - **January 2026 bio update**: Complete rewrite in first-person, grounded tone
-- Ambient work emphasizes **"rest and connection"** vibes (wellness/sensory focus)
+- Ambient work emphasizes **"strange noises"** and "rest and connection" vibes (wellness/sensory focus)
 - GLIA positioned as neural-network collaboration since 2024
-- Professional experience expanded: **20+ years, stage/venue management, Splinter Faction role**
+- Professional experience expanded: **Over 25 years**, stage/venue management
+- **Technical Production & AV**: New dedicated section showcasing Splinter Faction role, live sound, streaming, event technical direction
+- **Tuition offering**: Added 1-to-1 guitar, bass, and music production lessons to Workshops section
 - Morocco section: personal story, Moroccan Jewish ancestry, Gnaoua traditions, two project streams
 - New: **Synths & Stories** project (ambient music + Rumi poetry/storytelling)
 - All copy maintains authentic voice, avoids "AI tells" and overly formal language
