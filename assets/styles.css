@@ -23,12 +23,14 @@
   --color-4: rgba(255, 140, 220, 0.24);     /* Hot pink for Morocco */
   --color-5: rgba(140, 200, 255, 0.24);     /* Sky blue for Professional */
   --color-6: rgba(255, 180, 100, 0.24);     /* Warm amber for Synths & Stories */
+  --color-7: rgba(255, 120, 80, 0.24);      /* Warm coral/orange for Technical Production */
   --border-1: rgba(100, 240, 255, 0.51);
   --border-2: rgba(180, 150, 255, 0.51);
   --border-3: rgba(120, 255, 180, 0.43);
   --border-4: rgba(255, 140, 220, 0.51);
   --border-5: rgba(140, 200, 255, 0.51);
   --border-6: rgba(255, 180, 100, 0.51);
+  --border-7: rgba(255, 120, 80, 0.51);
 }
 
 * { box-sizing: border-box; }
@@ -521,6 +523,7 @@ h2, h3, h4, h5, h6 {
 .chip[href*="ambient"] { background: linear-gradient(135deg, var(--color-1), rgba(100, 240, 255, 0.15)); border-color: var(--border-1); }
 .chip[href*="professional"] { background: linear-gradient(135deg, var(--color-5), rgba(140, 200, 255, 0.15)); border-color: var(--border-5); }
 .chip[href*="facilitation"] { background: linear-gradient(135deg, var(--color-2), rgba(180, 150, 255, 0.15)); border-color: var(--border-2); }
+.chip[href*="technical"] { background: linear-gradient(135deg, var(--color-7), rgba(255, 120, 80, 0.15)); border-color: var(--border-7); }
 .chip[href*="glia"] { background: linear-gradient(135deg, var(--color-3), rgba(120, 255, 180, 0.13)); border-color: var(--border-3); }
 .chip[href*="stories"] { background: linear-gradient(135deg, var(--color-6), rgba(255, 180, 100, 0.15)); border-color: var(--border-6); }
 .chip[href*="morocco"] { background: linear-gradient(135deg, var(--color-4), rgba(255, 140, 220, 0.15)); border-color: var(--border-4); }
@@ -579,6 +582,15 @@ h2, h3, h4, h5, h6 {
 #facilitation h2::after {
   background: linear-gradient(90deg, rgba(180, 150, 255, 0.8), transparent);
   box-shadow: 0 0 10px rgba(180, 150, 255, 0.5);
+}
+
+#technical h2 {
+  color: rgba(255, 120, 80, 0.95);
+  text-shadow: 0 0 20px rgba(255, 120, 80, 0.3);
+}
+#technical h2::after {
+  background: linear-gradient(90deg, rgba(255, 120, 80, 0.8), transparent);
+  box-shadow: 0 0 10px rgba(255, 120, 80, 0.5);
 }
 
 #glia h2 {
@@ -676,6 +688,7 @@ h2, h3, h4, h5, h6 {
 .tag[href*="ambient"] { background: var(--color-1); border-color: var(--border-1); }
 .tag[href*="professional"] { background: var(--color-5); border-color: var(--border-5); }
 .tag[href*="facilitation"] { background: var(--color-2); border-color: var(--border-2); }
+.tag[href*="technical"] { background: var(--color-7); border-color: var(--border-7); }
 .tag[href*="glia"] { background: var(--color-3); border-color: var(--border-3); }
 .tag[href*="stories"] { background: var(--color-6); border-color: var(--border-6); }
 .tag[href*="morocco"] { background: var(--color-4); border-color: var(--border-4); }
@@ -772,6 +785,7 @@ input:focus, textarea:focus {
 #ambient .card { background: linear-gradient(135deg, rgba(100, 240, 255, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(100, 240, 255, 0.30); }
 #professional .card { background: linear-gradient(135deg, rgba(140, 200, 255, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(140, 200, 255, 0.30); }
 #facilitation .card { background: linear-gradient(135deg, rgba(180, 150, 255, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(180, 150, 255, 0.30); }
+#technical .card { background: linear-gradient(135deg, rgba(255, 120, 80, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(255, 120, 80, 0.30); }
 #glia .card { background: linear-gradient(135deg, rgba(120, 255, 180, 0.20), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(120, 255, 180, 0.26); }
 #stories .card { background: linear-gradient(135deg, rgba(255, 180, 100, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(255, 180, 100, 0.30); }
 #morocco .card { background: linear-gradient(135deg, rgba(255, 140, 220, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(255, 140, 220, 0.30); }

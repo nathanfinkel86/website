@@ -211,6 +211,7 @@
     const cardStyles = {
       'ambient': 'border-color: rgba(100, 240, 255, 0.25); background: linear-gradient(135deg, rgba(100, 240, 255, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(100, 240, 255, 0.08);',
       'facilitation': 'border-color: rgba(180, 150, 255, 0.25); background: linear-gradient(135deg, rgba(180, 150, 255, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(180, 150, 255, 0.08);',
+      'technical': 'border-color: rgba(255, 120, 80, 0.25); background: linear-gradient(135deg, rgba(255, 120, 80, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(255, 120, 80, 0.08);',
       'glia': 'border-color: rgba(120, 255, 180, 0.22); background: linear-gradient(135deg, rgba(120, 255, 180, 0.05), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(120, 255, 180, 0.08);',
       'morocco': 'border-color: rgba(255, 140, 220, 0.25); background: linear-gradient(135deg, rgba(255, 140, 220, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(255, 140, 220, 0.08);',
       'professional': 'border-color: rgba(140, 200, 255, 0.25); background: linear-gradient(135deg, rgba(140, 200, 255, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(140, 200, 255, 0.08);'

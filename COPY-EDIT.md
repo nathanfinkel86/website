@@ -91,33 +91,39 @@ More than twenty years of professional work across performance, stage management
 
 ---
 
-### Section: Workshops & Facilitation
+### Section: Workshops, Facilitation & Tuition
 <!-- Navigation: Click "Workshops & facilitation" chip from hero -->
 
 **Section ID**: `#facilitation`
 
 **Heading**
 <!-- Appears in: Section title, purple colored -->
-Workshops & facilitation
+Workshops, facilitation & tuition
 
 **Lede**
 <!-- Appears in: Opening paragraph at top of section card -->
-I design community-led music initiatives that welcome different abilities and comfort levels, combining sound journeys, gentle improvisation, and guided listening. These sessions are calming, participatory experiences built on listening cues and pressure-free collaboration. I also curate and direct large-scale events, managing safety protocols so the creative space stays open even when the audience is large.
+I design community-led music initiatives that welcome different abilities and comfort levels, combining sound journeys, gentle improvisation, and guided listening. These sessions are calming, participatory experiences built on listening cues and pressure-free collaboration. I also offer 1-to-1 tuition for guitar, bass, and music production, tailored to your goals and pace. I curate and direct large-scale events, managing safety protocols so the creative space stays open even when the audience is large.
 
-**Item 1: House Band**
+**Item 1: Tuition**
 <!-- Appears in: First card in vertical list -->
+- **Kicker**: 1-to-1 tuition
+- **Title**: Guitar, bass & music production
+- **Body**: Private lessons tailored to your goals, whether you're starting out or looking to develop specific skills. Focus on technique, improvisation, theory, or DAW workflows (Ableton Live). Patient, accessible approach that meets you where you are.
+
+**Item 2: House Band**
+<!-- Appears in: Second card in vertical list -->
 - **Kicker**: Limmud UK (15 years)
 - **Title**: House band and workshop leadership
 - **Body**: High-pressure live session work with visiting artists across genres, plus outreach through structured jam workshops that help mixed-ability groups play together confidently. Rapid material mastery and collaborative leadership.
 
-**Item 2: Borderland**
-<!-- Appears in: Second card in vertical list -->
+**Item 3: Borderland**
+<!-- Appears in: Third card in vertical list -->
 - **Kicker**: Borderland 2025
 - **Title**: Jam Camp Musical Director
 - **Body**: Coordinated a large-scale improvised performance for the main burn, supporting first-time performers and managing inclusive jams. Multi-year commitment to community-led music-making within the Burning Man community.
 
-**Item 3: COVID Streams**
-<!-- Appears in: Third card in vertical list -->
+**Item 4: COVID Streams**
+<!-- Appears in: Fourth card in vertical list -->
 - **Kicker**: COVID Streams
 - **Title**: Daily improvised livestreams
 - **Body**: Three months of daily improvised sessions during lockdown, generating a body of recordings and building a loyal supporter base on Patreon and PayPal.
@@ -305,10 +311,10 @@ What to include
 - **Kicker**: For bookings
 - **Body**: Date, location, set length, PA situation, and your budget range.
 
-**For Workshops**
+**For Workshops or Tuition**
 <!-- Appears in: Purple colored mini-card -->
-- **Kicker**: For workshops
-- **Body**: Group size, experience level, time available, and your goal (jam, teaching, performance).
+- **Kicker**: For workshops or tuition
+- **Body**: Group size or 1-to-1, experience level, time available, and your goal (jam, teaching, performance, specific skills).
 
 **For Glia / Creative Tech**
 <!-- Appears in: Mint colored mini-card -->
