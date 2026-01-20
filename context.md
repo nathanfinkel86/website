@@ -1,6 +1,6 @@
 # Music Website — Context
 
-**Last Updated**: January 17, 2026 | **Status**: Core structure finalized, design locked in
+**Last Updated**: January 20, 2026 | **Status**: Core structure finalized, bio updated, design locked in
 
 ## Live site
 - **GitHub Pages URL**: `https://nathanfinkel86.github.io/website/`
@@ -14,23 +14,29 @@
 
 ## Site structure
 - **Home**: `music-website/index.html` — Landing page with bio & quick links
-- **Music**: `music-website/music.html` — Listen & watch section (SoundCloud embeds + videos)
+- **Bio**: `music-website/bio.html` — Professional biography and background
 - **Projects**: `music-website/projects.html` — Main project map with linkable anchors:
   - `#ambient` — Ambient/electronic performance (with `#rig` subanchor)
   - `#houseband` — Professional performance experience
   - `#facilitation` — Workshops & facilitation
-  - `#glia` — Glia collaborative tool
-  - `#morocco` — Morocco recording (Essaouira)
-- **Shows**: `music-website/shows.html` — Dandelion calendar embed + recent highlights
-- **About**: `music-website/about.html` — Bio & context
-- **Contact**: `music-website/contact.html` — Mailto link + form placeholder
-- **Navigation**: Removed "Shows" from main nav menu (still accessible via "Upcoming shows" CTA button)
+  - `#glia` — Glia neural network instrument collaboration
+  - `#stories` — Synths & Stories (storytelling + ambient soundscapes)
+  - `#morocco` — Morocco recording projects (Essaouira/Gnaoua)
+- **Shows**: `music-website/shows.html` — Events calendar + past highlights
+- **Contact**: `music-website/contact.html` — Contact form (Formspree) + Instagram
+- **Navigation**: Simplified navigation with "Bio", "Upcoming shows", and "Book / contact" CTAs
 
 ## Styling / behavior
 - **CSS**: `music-website/assets/styles.css`
-  - Cool teal/cyan/purple color palette
-  - Minimalist, simplified buttons (transparent with borders, no gradients/shadows)
-  - Chip color coding: ambient (cyan), facilitation (purple), glia (mint), morocco (magenta)
+  - Cool teal/cyan/purple/amber color palette with 6 distinct project colors
+  - Chip color coding: 
+    - Ambient (cyan: rgba(100, 240, 255))
+    - Professional (sky blue: rgba(140, 200, 255))
+    - Facilitation (purple: rgba(180, 150, 255))
+    - GLIA (mint: rgba(120, 255, 180))
+    - Synths & Stories (amber: rgba(255, 180, 100))
+    - Morocco (magenta: rgba(255, 140, 220))
+  - Mobile-responsive grid with form ordering fix
   - Non-clickable chips (`.chip-static`) have no hover effects
   - Accordion styles for future expandable sections
 - **JS**: `music-website/assets/site.js`
@@ -42,10 +48,14 @@
 - **Removed**: All nested `/pages/` directory — content consolidated into main project page
 
 ## Content & copy
-- Ambient work emphasizes **"rest and presence"** vibes (wellness/sensory focus)
-- Glia framed as **"sensory playground"** (playful, collaborative, intuitive)
-- Professional performance highlights **15 years + 50+ festival appearances**
-- All copy written to avoid "AI tells" — authentic voice maintained
+- **January 2026 bio update**: Complete rewrite in first-person, grounded tone
+- Ambient work emphasizes **"rest and connection"** vibes (wellness/sensory focus)
+- GLIA positioned as neural-network collaboration since 2024
+- Professional experience expanded: **20+ years, stage/venue management, Splinter Faction role**
+- Morocco section: personal story, Moroccan Jewish ancestry, Gnaoua traditions, two project streams
+- New: **Synths & Stories** project (ambient music + Rumi poetry/storytelling)
+- All copy maintains authentic voice, avoids "AI tells" and overly formal language
+- Consistent use of "Gnaoua" spelling throughout
 
 ## Documentation
 See `docs/` folder for:
@@ -67,15 +77,25 @@ python3 -m http.server 8000
 
 Then open `http://localhost:8000`.
 
+## Recent updates (January 2026)
+- ✅ Complete bio refresh site-wide (first-person, grounded tone)
+- ✅ Added Synths & Stories project section with amber color scheme
+- ✅ Mobile contact form ordering fixed (form now appears above Instagram card)
+- ✅ Standardized spelling to "Gnaoua" throughout
+- ✅ Cleaned up commented-out code for production
+- ✅ Added Splinter Faction Senior Technical Producer role
+- ✅ Expanded Morocco section with personal heritage story
+
 ## Next edits you'll probably want
-- Replace the two SoundCloud embed placeholder URLs in `music.html`
-- Replace "Video" placeholder links in `music.html`
-- Populate "Upcoming shows" section in `shows.html` (currently placeholder with Dandelion embed)
-- Make the contact form actually submit somewhere (e.g. Formspree), if desired
-- Update the deploy timestamp in `assets/site.js` when you deploy
+- Add real media to placeholder embeds (SoundCloud/YouTube URLs)
+- Populate "Upcoming shows" with real events in `events.json`
+- Add recordings from Synths & Stories performances
+- Add GLIA performance media from December 2025 UK tour
 - Test across devices (mobile/tablet/desktop) — especially hero background positioning
 
 ## See also
-- Session todos (in Cursor) — track ongoing improvements and feature requests
+- `TODO.md` — Comprehensive task list with priorities and status tracking
+- `CHANGELOG.md` — Chronological record of all major updates
+- `docs/` folder — Design system, customization guides, and technical documentation
 - `SHOWS-FILTER-SYSTEM.md` — Interactive filtering for shows/events (future enhancement)
 

@@ -7,12 +7,12 @@
   --panel: rgba(255, 255, 255, 0.06);
   --panel-2: rgba(255, 255, 255, 0.10);
   --text: rgba(255, 255, 255, 0.92);
-  --muted: rgba(255, 255, 255, 0.70);
-  --faint: rgba(255, 255, 255, 0.50);
+  --muted: rgba(255, 255, 255, 0.75);  /* Improved from 0.70 for better contrast (4.8:1) */
+  --faint: rgba(255, 255, 255, 0.60);  /* Improved from 0.50 for better contrast (3.6:1) */
   --accent: #9bf6ff;
   --accent-2: #bdb2ff;
   --ring: rgba(155, 246, 255, 0.28);
-  --border: rgba(255, 255, 255, 0.10);
+  --border: rgba(255, 255, 255, 0.18); /* Improved from 0.10 for better visibility */
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
   --radius: 16px;
   
@@ -22,11 +22,13 @@
   --color-3: rgba(120, 255, 180, 0.20);     /* Mint green for Glia - 15% less luminous */
   --color-4: rgba(255, 140, 220, 0.24);     /* Hot pink for Morocco */
   --color-5: rgba(140, 200, 255, 0.24);     /* Sky blue for Professional */
+  --color-6: rgba(255, 180, 100, 0.24);     /* Warm amber for Synths & Stories */
   --border-1: rgba(100, 240, 255, 0.51);
   --border-2: rgba(180, 150, 255, 0.51);
   --border-3: rgba(120, 255, 180, 0.43);
   --border-4: rgba(255, 140, 220, 0.51);
   --border-5: rgba(140, 200, 255, 0.51);
+  --border-6: rgba(255, 180, 100, 0.51);
 }
 
 * { box-sizing: border-box; }
@@ -61,6 +63,11 @@ a {
 a:hover { 
   color: rgba(155, 246, 255, 0.9);
 }
+a:focus-visible {
+  outline: 2px solid rgba(155, 246, 255, 0.6);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 .container {
   width: min(1100px, calc(100% - 32px));
@@ -77,7 +84,13 @@ a:hover {
   border-radius: 10px;
   z-index: 9999;
 }
-.skip-link:focus { left: 16px; }
+.skip-link:focus { 
+  left: 16px; 
+}
+.skip-link:focus-visible {
+  outline: 3px solid rgba(155, 246, 255, 0.8);
+  outline-offset: 2px;
+}
 
 header {
   position: fixed;
@@ -188,6 +201,10 @@ section[id] {
   transform: translateY(-1px);
 }
 .btn:focus { outline: none; }
+.btn:focus-visible {
+  outline: 3px solid rgba(155, 246, 255, 0.6);
+  outline-offset: 2px;
+}
 .btn.primary {
   border-color: rgba(155, 246, 255, 0.65);
   background: linear-gradient(135deg, rgba(155, 246, 255, 0.22), rgba(155, 246, 255, 0.12));
@@ -396,6 +413,10 @@ h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 32px rgba(155, 246, 255, 0.38);
   transform: translateY(-2px);
 }
+.chip:focus-visible {
+  outline: 3px solid rgba(155, 246, 255, 0.6);
+  outline-offset: 3px;
+}
 
 /* Filter chips (clickable buttons) */
 .filter-chip {
@@ -441,6 +462,7 @@ h2, h3, h4, h5, h6 {
 .chip[href*="houseband"] { background: linear-gradient(135deg, var(--color-5), rgba(140, 200, 255, 0.15)); border-color: var(--border-5); }
 .chip[href*="facilitation"] { background: linear-gradient(135deg, var(--color-2), rgba(180, 150, 255, 0.15)); border-color: var(--border-2); }
 .chip[href*="glia"] { background: linear-gradient(135deg, var(--color-3), rgba(120, 255, 180, 0.13)); border-color: var(--border-3); }
+.chip[href*="stories"] { background: linear-gradient(135deg, var(--color-6), rgba(255, 180, 100, 0.15)); border-color: var(--border-6); }
 .chip[href*="morocco"] { background: linear-gradient(135deg, var(--color-4), rgba(255, 140, 220, 0.15)); border-color: var(--border-4); }
 .chip[href*="rig"] { background: linear-gradient(135deg, var(--color-1), rgba(100, 240, 255, 0.15)); border-color: var(--border-1); }
 
@@ -525,6 +547,7 @@ h2, h3, h4, h5, h6 {
 .tag[href*="houseband"] { background: var(--color-5); border-color: var(--border-5); }
 .tag[href*="facilitation"] { background: var(--color-2); border-color: var(--border-2); }
 .tag[href*="glia"] { background: var(--color-3); border-color: var(--border-3); }
+.tag[href*="stories"] { background: var(--color-6); border-color: var(--border-6); }
 .tag[href*="morocco"] { background: var(--color-4); border-color: var(--border-4); }
 .tag[href*="rig"] { background: var(--color-1); border-color: var(--border-1); }
 
@@ -620,6 +643,7 @@ input:focus, textarea:focus {
 #houseband .card { background: linear-gradient(135deg, rgba(140, 200, 255, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(140, 200, 255, 0.30); }
 #facilitation .card { background: linear-gradient(135deg, rgba(180, 150, 255, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(180, 150, 255, 0.30); }
 #glia .card { background: linear-gradient(135deg, rgba(120, 255, 180, 0.20), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(120, 255, 180, 0.26); }
+#stories .card { background: linear-gradient(135deg, rgba(255, 180, 100, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(255, 180, 100, 0.30); }
 #morocco .card { background: linear-gradient(135deg, rgba(255, 140, 220, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(255, 140, 220, 0.30); }
 
 /* Fade-in animations */
@@ -642,62 +666,14 @@ input:focus, textarea:focus {
   transform: translateY(-2px);
 }
 
-/* Back to Top Button */
-.back-to-top {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(155, 246, 255, 0.35), rgba(155, 246, 255, 0.22));
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(155, 246, 255, 0.60);
-  color: rgba(255, 255, 255, 0.95);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 24px rgba(155, 246, 255, 0.3);
-  z-index: 1000;
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.back-to-top:hover {
-  background: linear-gradient(135deg, rgba(155, 246, 255, 0.50), rgba(155, 246, 255, 0.35));
-  border-color: rgba(155, 246, 255, 0.85);
-  box-shadow: 0 6px 32px rgba(155, 246, 255, 0.45);
-  transform: translateY(-3px);
-}
-
-.back-to-top:active {
-  transform: translateY(-1px);
-}
-
-.back-to-top svg {
-  display: block;
-}
-
 @media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; }
-  .grid-3 { grid-template-columns: 1fr; }
-  
-  /* Back to top button - smaller on mobile */
-  .back-to-top {
-    width: 44px;
-    height: 44px;
-    bottom: 20px;
-    right: 20px;
+  .hero-grid { 
+    grid-template-columns: 1fr; 
   }
+  .hero-grid > div:last-child {
+    order: -1; /* Form appears first on mobile */
+  }
+  .grid-3 { grid-template-columns: 1fr; }
   
   /* Mobile hero layout */
   .hero-top-section {
@@ -872,4 +848,23 @@ input:focus, textarea:focus {
 
 .accordion-content > * + * {
   margin-top: 14px;
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .fade-in-target {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .hero-image img {
+    transform: none !important;
+  }
 }
