@@ -7,17 +7,25 @@
 
 ## ✅ Recent Accomplishments (January 20, 2026)
 
-Today's session completed:
+### Morning Session
 1. ✅ **Complete bio refresh** — Rewrote all bio content in first-person, grounded tone
 2. ✅ **Synths & Stories project** — Added full section with amber color scheme and embeds
 3. ✅ **Spelling standardization** — Changed all instances to "Gnaoua" throughout site
 4. ✅ **Mobile UX fix** — Contact form now appears above Instagram card on mobile
 5. ✅ **Code cleanup** — Removed commented-out sections for production readiness
-6. ✅ **Documentation updates** — Updated context.md and created CHANGELOG.md
-7. ✅ **TODO.md created** — This comprehensive task tracking document
-8. ✅ **Accessibility audit** — Comprehensive audit with fixes implemented (95/100 score)
+6. ✅ **Documentation system** — Created COPY-EDIT.md, WORKFLOW.md, CHANGELOG.md
+7. ✅ **Accessibility audit** — Comprehensive audit with fixes implemented (95/100 score)
+8. ✅ **Consolidated bio files** — Deleted duplicate, single source of truth
 
-**Files modified**: bio.html, index.html, projects.html, contact.html, styles.css, context.md, website-bio-arts-music-2026-01-14.md, ACCESSIBILITY-AUDIT.md
+### Afternoon Session
+9. ✅ **Removed scroll buttons** — Replaced confusing scroll up/down with better solution
+10. ✅ **Copy refinements** — Changed "ambient sound" to "strange noises", updated experience to 25+ years
+11. ✅ **Improved hero layout** — Split headline into main + subheading with decorative accents
+12. ✅ **Color-coded section titles** — Each section title now matches its chip color with glow
+13. ✅ **Sticky navigation** — Added persistent project nav that appears on scroll
+14. ✅ **Section ID fix** — Changed #houseband to #professional for clarity
+
+**Files modified**: All HTML files, styles.css, site.js, COPY-EDIT.md, documentation files
 
 **Next priority**: Add real media to placeholder embeds (SoundCloud/YouTube URLs)
 
@@ -193,8 +201,13 @@ Today's session completed:
   - Deleted older version: `/nathan-bio.md`
   - CVs kept separate as they serve different purpose
 
-### Documentation
+### Documentation & Workflow
 - [x] ✅ **Update `context.md`** with latest changes (Jan 20, 2026)
+- [x] ✅ **Create `COPY-EDIT.md`** for centralized content management (Jan 20, 2026)
+  - Single source of truth for all website copy
+  - Organized by page and section
+  - Edit copy in one place, sync to entire site
+  - Workflow: Edit file → Ask to "sync copy to website" → Review → Commit
   - Documented January 2026 bio updates
   - Added Synths & Stories project
   - Updated color system documentation (6 colors)

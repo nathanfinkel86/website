@@ -40,6 +40,45 @@
     });
   });
 
+  // Sticky project navigation
+  const stickyNav = document.getElementById('sticky-nav');
+  
+  if (stickyNav) {
+    console.log('Sticky nav found:', stickyNav);
+    
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      
+      // Show sticky nav after scrolling past explore indicator (around 500px)
+      if (scrollY > 500) {
+        stickyNav.classList.add('visible');
+        console.log('Sticky nav visible at', scrollY);
+      } else {
+        stickyNav.classList.remove('visible');
+      }
+      
+      // Highlight active section in sticky nav
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = stickyNav.querySelectorAll('.chip');
+      
+      let currentSection = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 200;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        if (scrollY >= sectionTop && scrollY < sectionBottom) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-section') === currentSection) {
+          link.classList.add('active');
+        }
+      });
+    }, { passive: true });
+  }
+
   // Fade-in animations on scroll
   const observerOptions = {
     threshold: 0.1,
@@ -174,7 +213,7 @@
       'facilitation': 'border-color: rgba(180, 150, 255, 0.25); background: linear-gradient(135deg, rgba(180, 150, 255, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(180, 150, 255, 0.08);',
       'glia': 'border-color: rgba(120, 255, 180, 0.22); background: linear-gradient(135deg, rgba(120, 255, 180, 0.05), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(120, 255, 180, 0.08);',
       'morocco': 'border-color: rgba(255, 140, 220, 0.25); background: linear-gradient(135deg, rgba(255, 140, 220, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(255, 140, 220, 0.08);',
-      'houseband': 'border-color: rgba(140, 200, 255, 0.25); background: linear-gradient(135deg, rgba(140, 200, 255, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(140, 200, 255, 0.08);'
+      'professional': 'border-color: rgba(140, 200, 255, 0.25); background: linear-gradient(135deg, rgba(140, 200, 255, 0.06), rgba(11, 15, 20, 0.30)); box-shadow: 0 2px 12px rgba(140, 200, 255, 0.08);'
     };
     
     // Use primary tag (first tag) for card color

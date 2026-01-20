@@ -17,7 +17,7 @@
 - **Bio**: `music-website/bio.html` — Professional biography and background
 - **Projects**: `music-website/projects.html` — Main project map with linkable anchors:
   - `#ambient` — Ambient/electronic performance (with `#rig` subanchor)
-  - `#houseband` — Professional performance experience
+  - `#professional` — Professional performance experience
   - `#facilitation` — Workshops & facilitation
   - `#glia` — Glia neural network instrument collaboration
   - `#stories` — Synths & Stories (storytelling + ambient soundscapes)

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Nathan Finkel — Music & Arts</title>
-    <meta name="description" content="Brighton-based musician and technologist exploring ambient sound, participatory music, and creative systems. 20+ years experience in performance, facilitation, and technical production." />
+    <meta name="description" content="Brighton-based musician and technologist exploring strange noises, participatory music, and interactive creative systems. Over 25 years experience in musicianship, performance, facilitation, and technical production." />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
@@ -36,6 +36,19 @@
       </div>
     </header>
 
+    <!-- Sticky project navigation (appears on scroll) -->
+    <nav class="sticky-project-nav" id="sticky-nav">
+      <div class="container">
+        <span class="nav-label">Projects:</span>
+        <a class="chip" href="#ambient" data-section="ambient">Ambient</a>
+        <a class="chip" href="#professional" data-section="professional">Professional</a>
+        <a class="chip" href="#facilitation" data-section="facilitation">Workshops</a>
+        <a class="chip" href="#glia" data-section="glia">Glia</a>
+        <a class="chip" href="#stories" data-section="stories">Stories</a>
+        <a class="chip" href="#morocco" data-section="morocco">Morocco</a>
+      </div>
+    </nav>
+
     <main id="content" class="hero-background">
       <div class="hero-overlay"></div>
       <div class="container hero-content-wrapper">
@@ -57,14 +70,26 @@
           
           <!-- Overlaid content -->
           <div style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly; min-height: 600px; padding: 80px 20px; text-align: center;">
-            <h2 style="font-size: clamp(29px, 4.5vw, 47px); line-height: 1.2; margin: 0; font-weight: 400; max-width: 900px; text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7), 0 1px 4px rgba(0, 0, 0, 0.5); letter-spacing: 0.005em; color: rgba(255, 255, 255, 0.97);">
-              Musician and technologist exploring ambient sound, participatory music, and creative systems with a focus on accessibility and shared listening.
-            </h2>
+            <!-- Decorative top accent -->
+            <div style="width: 60px; height: 2px; background: linear-gradient(90deg, transparent, rgba(155, 246, 255, 0.6), transparent); margin-bottom: 30px; box-shadow: 0 0 10px rgba(155, 246, 255, 0.4);"></div>
+            
+            <div style="max-width: 800px;">
+              <h2 style="font-size: clamp(24px, 3.8vw, 38px); line-height: 1.3; margin: 0 0 20px 0; font-weight: 400; text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7), 0 1px 4px rgba(0, 0, 0, 0.5); letter-spacing: 0.005em; color: rgba(255, 255, 255, 0.97);">
+                Brighton-based musician and technologist exploring strange noises, participatory music, and interactive creative systems.
+              </h2>
+              
+              <p style="font-size: clamp(15px, 2.2vw, 20px); line-height: 1.5; margin: 0; font-weight: 300; color: rgba(255, 255, 255, 0.80); text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6); letter-spacing: 0.02em;">
+                Over 25 years experience in musicianship, performance, facilitation, and technical production.
+              </p>
+            </div>
+            
+            <!-- Decorative bottom accent -->
+            <div style="width: 60px; height: 2px; background: linear-gradient(90deg, transparent, rgba(155, 246, 255, 0.6), transparent); margin-top: 30px; box-shadow: 0 0 10px rgba(155, 246, 255, 0.4);"></div>
             
             <div class="chips chips-hero" style="margin-top: 120px;">
               <a class="chip" href="#ambient">Ambient / electronic</a>
               <a class="chip" href="#glia">Glia - neural network instrument</a>
-              <a class="chip" href="#houseband">Professional performance</a>
+              <a class="chip" href="#professional">Professional performance</a>
               <a class="chip" href="#facilitation">Workshops & facilitation</a>
               <a class="chip" href="#stories">Synths & Stories</a>
               <a class="chip" href="#morocco">Morocco</a>
@@ -79,7 +104,7 @@
         <div id="explore-indicator" style="text-align: center; margin: 40px auto 60px; max-width: 290px; transition: opacity 0.3s ease, transform 0.3s ease;">
           <a href="#ambient" style="display: inline-flex; align-items: center; gap: 10px; padding: 20px 29px; border-radius: 999px; background: linear-gradient(135deg, rgba(100, 240, 255, 0.24), rgba(100, 240, 255, 0.15)); border: 2px solid rgba(100, 240, 255, 0.51); box-shadow: 0 2px 16px rgba(100, 240, 255, 0.21); text-decoration: none; transition: all 0.25s ease;">
             <div style="font-family: 'Megrim', system-ui; font-size: 16px; color: rgba(255, 255, 255, 0.95); letter-spacing: 0.02em;">
-              Explore Projects
+              Projects
             </div>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.8;">
               <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -90,7 +115,7 @@
         <section class="section" id="ambient" style="padding-top: 100px;">     
                <h2>Ambient / electronic performance</h2>
           <div class="card pad">
-            <p class="lede">Responsive, situation-led music built around layered textures, found sound, and melodic guitar. I aim to help people find rest and connection through immersive ambient/electronic sets, often improvised and shaped to the space. Each session is designed to be sensory-friendly and accessible.</p>
+            <p class="lede">Synthesiser and guitar based, situation-led music built around layered textures, found sound, and melodic guitar, mixed with the convulsions of various synthesisers. I aim to help people find rest and connection through immersive sets, almost always improvised and shaped to the space. Each session is designed to be sensory-friendly and a space that's welcome for any emotion.</p>
             
             <!-- Embedded Media -->
             <div style="margin: 24px 0;">
@@ -171,7 +196,7 @@
           </div>
         </section>
 
-        <section class="section" id="houseband">
+        <section class="section" id="professional">
           <h2>Professional performance experience</h2>
           <div class="card pad">
             <p class="lede">More than twenty years of professional work across performance, stage management, venue management, and technical production. I've performed 50+ festival shows and spent 15 years with Limmud UK's House Band, developing skills in multi-genre adaptability, high-pressure delivery, and reliable leadership across diverse contexts.</p>
@@ -193,7 +218,7 @@
               <div class="item">
                 <div class="kicker">Splinter Faction (2020-present)</div>
                 <h3>Senior Technical Producer</h3>
-                <p>Delivering hybrid events for Secret Cinema and Phillips, pioneering high-fidelity Zoom audio, live sound, and streaming workflows with Ableton Live, OBS/Streamlabs, VDMX, and projection mapping.</p>
+                <p>Delivering hybrid events for Secret Cinema and Phillips, pioneering high-fidelity Zoom audio, live sound, and streaming workflows with Ableton Live, OBS/Streamlabs, live international events and webinars.</p>
               </div>
               <div class="item">
                 <div class="kicker">50+ appearances</div>

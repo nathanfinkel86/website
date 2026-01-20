@@ -105,7 +105,67 @@ header {
 
 /* offset anchor links so sticky header doesn't cover titles */
 section[id] {
-  scroll-margin-top: 110px;
+  scroll-margin-top: 170px; /* Increased for taller sticky nav with padding */
+}
+
+/* Sticky project navigation */
+.sticky-project-nav {
+  position: fixed;
+  top: 60px; /* Below main header */
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(11, 15, 20, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px 0; /* Increased from 10px to prevent glow cutoff */
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.sticky-project-nav.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.sticky-project-nav .container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 4px; /* Extra space for glow on top */
+  padding-bottom: 4px; /* Extra space for glow on bottom */
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.sticky-project-nav .container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.sticky-project-nav .nav-label {
+  font-size: 13px;
+  color: var(--muted);
+  white-space: nowrap;
+  margin-right: 8px;
+  font-family: "Iceland", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sticky-project-nav .chip {
+  padding: 8px 16px;
+  font-size: 14px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sticky-project-nav .chip.active {
+  border-width: 2px;
+  box-shadow: 0 2px 20px rgba(155, 246, 255, 0.35);
 }
 
 .nav {
@@ -459,7 +519,7 @@ h2, h3, h4, h5, h6 {
 
 /* Chip color variations - consistent across pages by topic */
 .chip[href*="ambient"] { background: linear-gradient(135deg, var(--color-1), rgba(100, 240, 255, 0.15)); border-color: var(--border-1); }
-.chip[href*="houseband"] { background: linear-gradient(135deg, var(--color-5), rgba(140, 200, 255, 0.15)); border-color: var(--border-5); }
+.chip[href*="professional"] { background: linear-gradient(135deg, var(--color-5), rgba(140, 200, 255, 0.15)); border-color: var(--border-5); }
 .chip[href*="facilitation"] { background: linear-gradient(135deg, var(--color-2), rgba(180, 150, 255, 0.15)); border-color: var(--border-2); }
 .chip[href*="glia"] { background: linear-gradient(135deg, var(--color-3), rgba(120, 255, 180, 0.13)); border-color: var(--border-3); }
 .chip[href*="stories"] { background: linear-gradient(135deg, var(--color-6), rgba(255, 180, 100, 0.15)); border-color: var(--border-6); }
@@ -473,9 +533,79 @@ h2, h3, h4, h5, h6 {
   margin-bottom: 80px;
 }
 .section h2 {
-  margin: 0 0 12px;
-  font-size: 18px;
-  letter-spacing: 0.2px;
+  margin: 0 0 16px;
+  font-size: 32px;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+/* Add colored accent line under each section title */
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  box-shadow: 0 0 8px rgba(155, 246, 255, 0.4);
+}
+
+/* Color-coded section titles to match chips */
+#ambient h2 {
+  color: rgba(100, 240, 255, 0.95);
+  text-shadow: 0 0 20px rgba(100, 240, 255, 0.3);
+}
+#ambient h2::after {
+  background: linear-gradient(90deg, rgba(100, 240, 255, 0.8), transparent);
+  box-shadow: 0 0 10px rgba(100, 240, 255, 0.5);
+}
+
+#professional h2 {
+  color: rgba(140, 200, 255, 0.95);
+  text-shadow: 0 0 20px rgba(140, 200, 255, 0.3);
+}
+#professional h2::after {
+  background: linear-gradient(90deg, rgba(140, 200, 255, 0.8), transparent);
+  box-shadow: 0 0 10px rgba(140, 200, 255, 0.5);
+}
+
+#facilitation h2 {
+  color: rgba(180, 150, 255, 0.95);
+  text-shadow: 0 0 20px rgba(180, 150, 255, 0.3);
+}
+#facilitation h2::after {
+  background: linear-gradient(90deg, rgba(180, 150, 255, 0.8), transparent);
+  box-shadow: 0 0 10px rgba(180, 150, 255, 0.5);
+}
+
+#glia h2 {
+  color: rgba(120, 255, 180, 0.95);
+  text-shadow: 0 0 20px rgba(120, 255, 180, 0.3);
+}
+#glia h2::after {
+  background: linear-gradient(90deg, rgba(120, 255, 180, 0.8), transparent);
+  box-shadow: 0 0 10px rgba(120, 255, 180, 0.5);
+}
+
+#stories h2 {
+  color: rgba(255, 180, 100, 0.95);
+  text-shadow: 0 0 20px rgba(255, 180, 100, 0.3);
+}
+#stories h2::after {
+  background: linear-gradient(90deg, rgba(255, 180, 100, 0.8), transparent);
+  box-shadow: 0 0 10px rgba(255, 180, 100, 0.5);
+}
+
+#morocco h2 {
+  color: rgba(255, 140, 220, 0.95);
+  text-shadow: 0 0 20px rgba(255, 140, 220, 0.3);
+}
+#morocco h2::after {
+  background: linear-gradient(90deg, rgba(255, 140, 220, 0.8), transparent);
+  box-shadow: 0 0 10px rgba(255, 140, 220, 0.5);
 }
 .grid-3 {
   display: grid;
@@ -544,7 +674,7 @@ h2, h3, h4, h5, h6 {
 
 /* Tag color variations - consistent across pages by topic */
 .tag[href*="ambient"] { background: var(--color-1); border-color: var(--border-1); }
-.tag[href*="houseband"] { background: var(--color-5); border-color: var(--border-5); }
+.tag[href*="professional"] { background: var(--color-5); border-color: var(--border-5); }
 .tag[href*="facilitation"] { background: var(--color-2); border-color: var(--border-2); }
 .tag[href*="glia"] { background: var(--color-3); border-color: var(--border-3); }
 .tag[href*="stories"] { background: var(--color-6); border-color: var(--border-6); }
@@ -640,7 +770,7 @@ input:focus, textarea:focus {
 
 /* Project section color variations - distinct vibrant palette */
 #ambient .card { background: linear-gradient(135deg, rgba(100, 240, 255, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(100, 240, 255, 0.30); }
-#houseband .card { background: linear-gradient(135deg, rgba(140, 200, 255, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(140, 200, 255, 0.30); }
+#professional .card { background: linear-gradient(135deg, rgba(140, 200, 255, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(140, 200, 255, 0.30); }
 #facilitation .card { background: linear-gradient(135deg, rgba(180, 150, 255, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(180, 150, 255, 0.30); }
 #glia .card { background: linear-gradient(135deg, rgba(120, 255, 180, 0.20), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(120, 255, 180, 0.26); }
 #stories .card { background: linear-gradient(135deg, rgba(255, 180, 100, 0.24), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); backdrop-filter: blur(10px); border-color: rgba(255, 180, 100, 0.30); }
