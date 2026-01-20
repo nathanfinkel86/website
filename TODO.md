@@ -25,6 +25,12 @@
 13. ✅ **Sticky navigation** — Added persistent project nav that appears on scroll
 14. ✅ **Section ID fix** — Changed #houseband to #professional for clarity
 
+### Evening Session
+15. ✅ **Technical Production & AV section** — New dedicated section with coral/orange color scheme
+16. ✅ **7th color added** — rgba(255, 120, 80) for technical services
+17. ✅ **Tuition offering** — Added 1-to-1 lessons to Workshops & facilitation section
+18. ✅ **Reorganized Professional section** — Moved Splinter Faction to Technical section
+
 **Files modified**: All HTML files, styles.css, site.js, COPY-EDIT.md, documentation files
 
 **Next priority**: Add real media to placeholder embeds (SoundCloud/YouTube URLs)

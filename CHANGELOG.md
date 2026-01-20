@@ -21,6 +21,40 @@ and this project adheres to semantic versioning principles.
 
 ---
 
+## [2026-01-20 - Evening] Technical Production & Tuition Update
+
+### Added
+- **Technical Production & AV section** — New dedicated section showcasing professional technical services
+  - Splinter Faction role (moved from Professional section)
+  - Live sound engineering & mixing
+  - Streaming & hybrid event services
+  - Event technical direction & show calling
+- **7th color to design system** — Coral/orange (rgba(255, 120, 80)) for technical section
+- **Tuition offering** — Added 1-to-1 guitar, bass, and music production lessons
+  - New card in Workshops section
+  - Updated section title to "Workshops, facilitation & tuition"
+  - Added tuition inquiry guidance to contact page
+- **Navigation updates**
+  - Added "Technical production & AV" chip to hero navigation
+  - Added "Tech/AV" to sticky navigation
+- **Contact page enhancement** — New inquiry card for technical production services with coral/orange styling
+
+### Changed
+- Reorganized Professional Performance section — Removed Splinter Faction (now in Technical)
+- Updated COPY-EDIT.md with all new technical section and tuition content
+
+### Files Modified
+- `index.html` — Added technical section, updated facilitation section title and content
+- `projects.html` — Added technical section
+- `contact.html` — Added technical inquiry card
+- `assets/styles.css` — Added 7th color variables, chip/tag/h2 styling for technical section
+- `assets/site.js` — Added technical color to cardStyles palette
+- `COPY-EDIT.md` — Documented technical section and tuition content
+- `TODO.md` — Updated with evening session accomplishments
+- `CHANGELOG.md` — This entry
+
+---
+
 ## [2026-01-20] - Major Bio Update & New Project
 
 ### Added

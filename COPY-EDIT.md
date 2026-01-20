@@ -130,6 +130,45 @@ I design community-led music initiatives that welcome different abilities and co
 
 ---
 
+### Section: Technical Production & AV
+<!-- Navigation: Click "Technical production & AV" chip from hero -->
+
+**Section ID**: `#technical`
+
+**Heading**
+<!-- Appears in: Section title, coral/orange colored -->
+Technical Production & AV
+
+**Lede**
+<!-- Appears in: Opening paragraph at top of section card -->
+Professional technical production and AV services for hybrid events, streaming, and live sound. I deliver high-quality audio workflows, event technical direction, and seamless integration of complex systems. Clear communication, reliable execution, and creative problem-solving for your production needs.
+
+**Item 1: Splinter Faction**
+<!-- Appears in: First item in list -->
+- **Kicker**: Splinter Faction (2020-present)
+- **Heading**: Senior Technical Producer
+- **Body**: Delivering hybrid events for Secret Cinema and Phillips, pioneering high-fidelity Zoom audio, live sound, and streaming workflows with Ableton Live, OBS/Streamlabs, live international events and webinars.
+
+**Item 2: Live Sound**
+<!-- Appears in: Second item in list -->
+- **Kicker**: Live sound
+- **Heading**: Sound engineering & mixing
+- **Body**: Front-of-house and monitor mixing for live events, venue sound systems, troubleshooting, and acoustic optimization. Experience across intimate venues to large festival stages.
+
+**Item 3: Streaming & Hybrid**
+<!-- Appears in: Third item in list -->
+- **Kicker**: Streaming & hybrid
+- **Heading**: High-fidelity audio for online events
+- **Body**: Zoom audio optimization, OBS/Streamlabs configuration, multi-camera switching, and reliable streaming infrastructure. Proven workflows for professional-quality remote and hybrid events.
+
+**Item 4: Event Technical Direction**
+<!-- Appears in: Fourth item in list -->
+- **Kicker**: Event technical direction
+- **Heading**: Show calling & technical coordination
+- **Body**: Pre-production planning, technical rider review, crew coordination, and live show calling. Calm under pressure with clear communication to all departments.
+
+---
+
 ### Section: Glia — Neural Network Instrument
 <!-- Navigation: Click "Glia - neural network instrument" chip from hero -->
 
@@ -315,6 +354,11 @@ What to include
 <!-- Appears in: Purple colored mini-card -->
 - **Kicker**: For workshops or tuition
 - **Body**: Group size or 1-to-1, experience level, time available, and your goal (jam, teaching, performance, specific skills).
+
+**For Technical Production / AV**
+<!-- Appears in: Coral/orange colored mini-card -->
+- **Kicker**: For technical production / AV
+- **Body**: Event type, date, venue details, technical requirements, streaming needs, and your budget. Happy to discuss complex setups and hybrid events.
 
 **For Glia / Creative Tech**
 <!-- Appears in: Mint colored mini-card -->
