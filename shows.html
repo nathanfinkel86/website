@@ -1,101 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Shows — Nathan Finkel</title>
-    <meta name="description" content="Upcoming shows, facilitation, and recent highlights." />
-    <link rel="stylesheet" href="assets/styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#content">Skip to content</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shows — Nathan Finkel</title>
+  <meta name="description" content="Upcoming shows, workshops, and recent highlights.">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body class="page">
 
-    <header>
-      <div class="container">
-        <div class="nav">
-          <a class="brand" href="index.html" aria-label="Home">
-            <div class="brand-mark" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="brand-title">
-              <strong>Nathan Finkel</strong>
-              <span>Music & arts</span>
-            </div>
-          </a>
+  <main class="page-content">
+    <a href="index.html" class="back">← Back</a>
+    <h1>Shows</h1>
+    <p class="lede">Upcoming shows and recent highlights.</p>
 
-          <div class="nav-cta">
-            <a class="btn small" href="bio.html">Bio</a>
-            <a class="btn small" href="shows.html">Upcoming shows</a>
-            <a class="btn small" href="contact.html">Book / contact</a>
+    <!-- Filter -->
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="ambient">Music</button>
+      <button class="filter" data-filter="facilitation">Workshops</button>
+      <button class="filter" data-filter="glia">Glia</button>
+    </div>
+
+    <!-- Upcoming -->
+    <section class="events-section">
+      <h2>Upcoming</h2>
+      <div id="upcoming-events"></div>
+      <p id="no-upcoming" class="muted" style="display: none;">No upcoming events. Check back soon!</p>
+    </section>
+
+    <!-- Past -->
+    <section class="events-section">
+      <h2>Past</h2>
+      <div id="past-events"></div>
+    </section>
+
+  </main>
+
+  <footer>© <span id="year"></span> Nathan Finkel</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    let allEvents = [];
+    let currentFilter = 'all';
+
+    // Load events
+    fetch('assets/events.json')
+      .then(r => r.json())
+      .then(events => {
+        allEvents = events;
+        render();
+      });
+
+    // Filter buttons
+    document.querySelectorAll('.filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        render();
+      });
+    });
+
+    function render() {
+      const now = new Date().toISOString().split('T')[0];
+      
+      const filtered = currentFilter === 'all' 
+        ? allEvents 
+        : allEvents.filter(e => e.tags.includes(currentFilter));
+
+      const upcoming = filtered.filter(e => e.date >= now);
+      const past = filtered.filter(e => e.date < now);
+
+      document.getElementById('upcoming-events').innerHTML = upcoming.map(renderEvent).join('');
+      document.getElementById('past-events').innerHTML = past.map(renderEvent).join('');
+      
+      document.getElementById('no-upcoming').style.display = upcoming.length ? 'none' : 'block';
+    }
+
+    function renderEvent(e) {
+      const date = new Date(e.date).toLocaleDateString('en-GB', { 
+        day: 'numeric', month: 'short', year: 'numeric' 
+      });
+      return `
+        <div class="event-card">
+          <div class="event-date">${date}</div>
+          <div class="event-info">
+            <strong>${e.title}</strong>
+            <span class="event-venue">${e.venue}, ${e.location}</span>
+            ${e.ticketUrl ? `<a href="${e.ticketUrl}" target="_blank">Tickets →</a>` : ''}
           </div>
         </div>
-      </div>
-    </header>
+      `;
+    }
+  </script>
 
-    <main id="content" class="hero-background" style="position: relative;">
-      <div class="hero-overlay"></div>
-      <div class="container">
-        <section class="hero">
-          <div class="card pad" style="background: linear-gradient(135deg, rgba(100, 240, 255, 0.12), rgba(11, 15, 20, 0.68)), rgba(11, 15, 20, 0.68); border-color: rgba(100, 240, 255, 0.25);">
-            <h1>Shows</h1>
-            <p class="lede">
-              Upcoming shows and recent highlights. Filter by type below.
-            </p>
-            
-            <!-- Filter chips -->
-            <div class="chips" id="filter-chips">
-              <button class="chip filter-chip active" data-filter="all" style="border-color: rgba(155, 246, 255, 0.55); background: linear-gradient(135deg, rgba(155, 246, 255, 0.24), rgba(155, 246, 255, 0.15));">All</button>
-              <button class="chip filter-chip" data-filter="ambient" style="border-color: rgba(100, 240, 255, 0.51); background: linear-gradient(135deg, rgba(100, 240, 255, 0.24), rgba(100, 240, 255, 0.15));">Music</button>
-              <button class="chip filter-chip" data-filter="facilitation" style="border-color: rgba(180, 150, 255, 0.51); background: linear-gradient(135deg, rgba(180, 150, 255, 0.24), rgba(180, 150, 255, 0.15));">Workshops & Facilitation</button>
-              <button class="chip filter-chip" data-filter="glia" style="border-color: rgba(120, 255, 180, 0.43); background: linear-gradient(135deg, rgba(120, 255, 180, 0.20), rgba(120, 255, 180, 0.13));">Glia</button>
-            </div>
-          </div>
-        </section>
-
-        <!-- Decorative separator -->
-        <div style="height: 36px; display: flex; align-items: center; justify-content: center; margin: 18px 0;">
-          <div style="width: 100%; max-width: 300px; height: 1px; background: linear-gradient(90deg, transparent, rgba(155, 246, 255, 0.3) 50%, transparent); box-shadow: 0 0 20px rgba(155, 246, 255, 0.2);"></div>
-        </div>
-
-        <section class="section">
-          <h2>Upcoming</h2>
-          <div class="list" id="upcoming-events">
-            <!-- Events loaded from events.json -->
-          </div>
-          <p class="note" id="no-upcoming" style="display: none;">
-            No upcoming events at the moment. Check back soon!
-          </p>
-        </section>
-
-        <section class="section">
-          <h2>Past highlights</h2>
-          <div class="list" id="past-events">
-            <!-- Past events loaded from events.json -->
-          </div>
-        </section>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div>© <span data-year></span> Nathan Finkel</div>
-          <div style="display:flex; gap: 12px; flex-wrap: wrap; align-items: center;">
-            <a href="contact.html">Contact</a>
-            <a href="bio.html">About</a>
-            <a href="index.html">Home</a>
-            <span style="color: rgba(255, 255, 255, 0.3); margin: 0 4px;">|</span>
-            <a href="https://instagram.com/nathan_finkel_music" target="_blank" rel="noreferrer" title="Instagram">Instagram</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="assets/site.js"></script>
-  </body>
+</body>
 </html>
-

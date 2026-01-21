@@ -1,68 +1,50 @@
-# Nathan Finkel - Music & Arts Website
+# Nathan Finkel — Music & Arts Website
 
-Brighton-based musician and music technologist: ambient/electronic performance, facilitation, and creative technology.
+Minimal, warm website with Japanese vintage × Moroccan aesthetic.
 
-## Live Site
-**URL:** https://nathanfinkel86.github.io/website/
-
-## 📚 Documentation
-
-All documentation is in the **[`docs/`](docs/)** folder:
-
-- **[HOW-TO-UPDATE.md](docs/HOW-TO-UPDATE.md)** - Update content and deploy changes
-- **[TEMPLATE-README.md](docs/TEMPLATE-README.md)** - Use this site as a template
-- **[CUSTOMIZATION-GUIDE.md](docs/CUSTOMIZATION-GUIDE.md)** - Step-by-step customization
-- **[DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md)** - Complete design documentation
-- **[CODE-STRUCTURE.md](docs/CODE-STRUCTURE.md)** - Technical architecture
-- **[CODEBASE-STATUS.md](docs/CODEBASE-STATUS.md)** - Current status
-
-## Project Structure
+## Structure
 
 ```
 music-website/
 ├── index.html              # Home page
-├── about.html              # About page
-├── music.html              # Music/recordings page
-├── projects.html           # Projects overview
-├── shows.html              # Shows/performances
-├── contact.html            # Contact form
-├── p/                      # Project subpages
-│   ├── ambient.html        # Ambient/electronic project
-│   ├── professional.html   # Professional performance
-│   ├── facilitation.html   # Workshops & facilitation
-│   ├── glia.html           # Glia project
-│   └── morocco.html        # Morocco recording project
+├── shows.html              # Events calendar
+├── context.md              # Single source of truth for all content
+├── CONTENT-ARCHIVE.md      # Previous site content (archived)
 ├── assets/
-│   ├── styles.css          # Main stylesheet
-│   ├── site.js             # JavaScript
-│   └── audio/              # Audio files (if needed)
-└── *.jpg, *.jpeg           # Performance photos
-
+│   ├── styles.css          # All styling
+│   ├── events.json         # Event data for shows page
+│   └── images/             # All images
+└── docs/
+    └── HOW-TO-UPDATE-EVENTS.md   # How to update shows page
 ```
 
-## Key Features
-- **Hero background image** - Immersive full-page design
-- **Responsive design** - works on mobile, tablet, desktop
-- **Teal color palette** - cool blue/cyan/purple tones
-- **Enhanced hover effects** - glowing clickable elements
-- **External integrations** - SoundCloud, Dandelion events, Formspree
-- **GitHub Pages** hosting - free, reliable, automatic deploys
+## Quick Start
 
-## 🎨 Using as a Template
+**Run locally:**
+```bash
+cd music-website
+python3 -m http.server 8000
+```
+Then visit: http://localhost:8000
 
-This site is designed to be reusable! See **[docs/TEMPLATE-README.md](docs/TEMPLATE-README.md)** for:
-- How to use this as a template for your own site
-- Complete customization guide
-- Design system documentation
-- Deployment instructions
+## Design Philosophy
+
+- **Warm & minimal** — Japanese vintage meets Moroccan warmth
+- **Paper textures** — Cream backgrounds, terracotta accents
+- **Clean typography** — Lora serif + Inter sans
+- **Breathing room** — Generous spacing, no clutter
+- **Grounded tone** — Direct, human language (no AI-bullshit)
+
+## Key Files
+
+- **`context.md`** — Single source of truth for all content, design direction, and tone of voice
+- **`shows.html`** — Dynamic events calendar (reads from `assets/events.json`)
+- **`docs/HOW-TO-UPDATE-EVENTS.md`** — Instructions for updating shows page
 
 ## Deployment
-Push to `main` branch → GitHub Pages automatically rebuilds → Live in ~2 minutes
 
-## Contact
-- **Repository:** https://github.com/nathanfinkel86/website
-- **Issues:** Use GitHub Issues for bug reports
+Push to `main` branch → GitHub Pages rebuilds automatically
 
 ---
 
-*Last updated: 2026-01-15*
+**Last updated:** January 21, 2026

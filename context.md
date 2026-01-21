@@ -1,116 +1,173 @@
-# Music Website — Context
+# Music Website — Context & Source of Truth
 
-**Last Updated**: January 20, 2026 (late evening) | **Status**: Core structure finalized, bio polished, media embeds in progress
+**Last Updated**: January 21, 2026  
+**Status**: Live — Central layout with ornamental circles
 
-## Live site
-- **GitHub Pages URL**: `https://nathanfinkel86.github.io/website/`
-- **Goal domain**: `natecreates.co.uk` (currently on Canva; plan is to point DNS to the new static site host)
+---
 
-## What this is
-- A **simple static website** (no build step): plain HTML + CSS + a tiny JS file.
-- Designed to be **easy to edit** by changing text directly in the `.html` files.
-- **Font**: Crimson Text (serif, gothic/esoteric feel)
-- **Theme**: Cool teal/cyan/purple accents on dark blue-grey background with subtle paisley overlay
+## 🎯 Site Purpose
 
-## Site structure
-- **Home**: `music-website/index.html` — Landing page with bio & quick links
-- **Bio**: `music-website/bio.html` — Professional biography and background
-- **Projects**: `music-website/projects.html` — Main project map with linkable anchors:
-  - `#ambient` — Ambient/electronic performance (with `#rig` subanchor)
-  - `#professional` — Professional performance experience
-  - `#facilitation` — Workshops, facilitation & tuition
-  - `#technical` — Technical Production & AV services
-  - `#glia` — Glia neural network instrument collaboration
-  - `#stories` — Synths & Stories (storytelling + ambient soundscapes)
-  - `#morocco` — Morocco recording projects (Essaouira/Gnaoua)
-- **Shows**: `music-website/shows.html` — Events calendar + past highlights
-- **Contact**: `music-website/contact.html` — Contact form (Formspree) + Instagram
-- **Navigation**: Simplified navigation with "Bio", "Upcoming shows", and "Book / contact" CTAs
+Simple, warm, inviting website for Nathan Finkel's music and creative work. Focus on clarity, accessibility, and a grounded tone that reflects the work itself.
 
-## Styling / behavior
-- **CSS**: `music-website/assets/styles.css`
-  - Cool teal/cyan/purple/amber color palette with 7 distinct project colors
-  - Chip color coding: 
-    - Ambient (cyan: rgba(100, 240, 255))
-    - Professional (sky blue: rgba(140, 200, 255))
-    - Facilitation (purple: rgba(180, 150, 255))
-    - Technical Production (coral/orange: rgba(255, 120, 80))
-    - GLIA (mint: rgba(120, 255, 180))
-    - Synths & Stories (amber: rgba(255, 180, 100))
-    - Morocco (magenta: rgba(255, 140, 220))
-  - Mobile-responsive grid with form ordering fix
-  - Non-clickable chips (`.chip-static`) have no hover effects
-  - Accordion styles for future expandable sections
-- **JS**: `music-website/assets/site.js`
-  - Mobile menu toggle
-  - Sets active nav link
-  - Inserts current year in footer
-  - Accordion toggle functionality (ready to use)
-- **Images**: `/assets/images/` organized by type (hero, portraits, performances, misc)
-- **Removed**: All nested `/pages/` directory — content consolidated into main project page
+---
 
-## Content & copy
-- **January 2026 bio update**: Complete rewrite in first-person, grounded tone
-- Ambient work emphasizes **"strange noises"** and "rest and connection" vibes (wellness/sensory focus)
-- GLIA positioned as neural-network collaboration since 2024
-- Professional experience expanded: **Over 25 years**, stage/venue management
-- **Technical Production & AV**: New dedicated section showcasing Splinter Faction role, live sound, streaming, event technical direction
-- **Tuition offering**: Added 1-to-1 guitar, bass, and music production lessons to Workshops section
-- Morocco section: personal story, Moroccan Jewish ancestry, Gnaoua traditions, two project streams
-- New: **Synths & Stories** project (ambient music + Rumi poetry/storytelling)
-- All copy maintains authentic voice, avoids "AI tells" and overly formal language
-- Consistent use of "Gnaoua" spelling throughout
+## 👤 About Nathan
 
-## Documentation
-See `docs/` folder for:
-- `DESIGN-SYSTEM.md` — Color, typography, spacing standards
-- `CUSTOMIZATION-GUIDE.md` — How to customize for your own use
-- `TEMPLATE-README.md` — Using this site as a replicable template
-- `SHOWS-FILTER-SYSTEM.md` — Future enhancement: filterable events (on hold)
+Brighton-based musician and technologist exploring strange noises, participatory music, and interactive creative systems. Over 25 years in musicianship, performance, facilitation, and technical production.
 
-## Hosting notes (practical)
-- Current host: **GitHub Pages**.
-- For `natecreates.co.uk`: update DNS away from Canva to point at GitHub Pages (A/AAAA and optionally `www` CNAME).
+### Core Identity
+- **Music**: Ambient/electronic performance, guitar/bass/drums/synths, improvisation
+- **Facilitation**: Community workshops, inclusive music-making, accessibility-focused
+- **Technical**: Streaming production, live sound, event technical direction
+- **Creative Tech**: GLIA (neural network instrument), hybrid analogue/digital rigs
+- **Cultural**: Moroccan Jewish heritage, learning Gnaoua music in Essaouira
 
-## Local run (dev)
-From `music-website/`:
+### Current Roles
+- **Splinter Faction** — Senior Streaming Producer (2020-present)
+- **Limmud UK** — House Band Leader (19 years total, 4 years as leader)
+- **Burning Nest** — Board Member & Operations Lead (13+ years)
+- **The Borderland** — Jam Camp Lead (8 years, 2 years as Lead)
+- **GLIA** — Collaborator (2023-present)
 
-```bash
-python3 -m http.server 8000
+---
+
+## 🎨 Design Aesthetic
+
+**Current Design**: Central card layout with ornamental project circles
+
+### Visual Direction
+- Warm cream background (#FAF7F2)
+- Name centered, projects as circles arranged around it
+- Cormorant Garamond + Crimson Text typography
+- Minimal layout with breathing room
+- Ornamental double-border circles with color accents
+- No dark mode, no tech startup vibes
+
+### Color Palette
+```css
+--bg: #FAF7F2;          /* Cream background */
+--text: #3A3530;        /* Dark warm grey */
+--muted: #6B635A;       /* Muted text */
+--border: #E5DED4;      /* Subtle borders */
+--terracotta: #C17A5B;  /* Primary accent */
+--gold: #C9A855;        /* Secondary accent */
+--sage: #7A9F8E;        /* Workshops */
+--dusty-rose: #B89999;  /* Glia */
+--ocean: #5B8A9A;       /* Technical */
 ```
 
-Then open `http://localhost:8000`.
+---
 
-## Recent updates (January 2026)
-- ✅ Complete bio refresh site-wide (first-person, grounded tone)
-- ✅ Added Synths & Stories project section with amber color scheme
-- ✅ Mobile contact form ordering fixed (form now appears above Instagram card)
-- ✅ Standardized spelling to "Gnaoua" throughout
-- ✅ Cleaned up commented-out code for production
-- ✅ Added Splinter Faction Senior Technical Producer role
-- ✅ Expanded Morocco section with personal heritage story
-- ✅ Added GLIA SoundCloud embed — "Just the Ending" with Mark Claydon
-- ✅ Added Lockdown Streams playlist to COVID Streams section
-- ✅ Bio page polish — copy refresh and removed scroll controls
-- ✅ Contact page UX — improved CTA visibility
+## 🗂️ Site Structure
 
-## Media embeds status
-- ✅ Ambient section: London Night Cafe (audio + video), New Year's Day 2025 (audio + video)
-- ✅ GLIA section: "Just the Ending" (audio)
-- ✅ Workshops section: Lockdown Streams playlist (audio)
-- ⏳ Professional section: House Band performance video (placeholder)
-- ⏳ Synths & Stories section: Performance recordings (placeholder)
-- ⏳ Morocco section: Field recordings (placeholder)
+### Pages
+| File | Purpose |
+|------|---------|
+| `index.html` | Home — central name card with project circles |
+| `music.html` | Music project page |
+| `workshops.html` | Workshops project page |
+| `technical.html` | Technical production page |
+| `glia.html` | Glia neural network page |
+| `morocco.html` | Morocco/Gnaoua project page |
+| `contact.html` | Contact info |
+| `shows.html` | Events calendar with filtering |
 
-## Next edits you'll probably want
-- Add remaining media embeds (House Band, Synths & Stories, Morocco)
-- Populate "Upcoming shows" with real events in `events.json`
-- Test across devices (mobile/tablet/desktop) — especially hero background positioning
-- Consider adding photo gallery or press kit page
+### Assets
+| File | Purpose |
+|------|---------|
+| `assets/styles.css` | Single stylesheet for all pages |
+| `assets/events.json` | Event data for shows page |
+| `assets/images/` | All image assets |
 
-## See also
-- `TODO.md` — Comprehensive task list with priorities and status tracking
-- `CHANGELOG.md` — Chronological record of all major updates
-- `docs/` folder — Design system, customization guides, and technical documentation
-- `SHOWS-FILTER-SYSTEM.md` — Interactive filtering for shows/events (future enhancement)
+### Documentation
+| File | Purpose |
+|------|---------|
+| `context.md` | This file — source of truth |
+| `CONTENT-ARCHIVE.md` | Previous site content backup |
+| `REDESIGN-SUMMARY.md` | Notes from Jan 21 redesign |
+| `docs/HOW-TO-UPDATE-EVENTS.md` | Shows page update instructions |
 
+---
+
+## ✍️ Tone of Voice
+
+### DO:
+- Write in first person ("I" not "we" or third person)
+- Be direct and specific
+- Use casual, grounded language
+- Quantify where possible ("19 years," "50+ shows")
+- Sound human and authentic
+- Err on side of humility by ~5%
+
+### DON'T:
+- Use AI-bullshit phrases: "mission-critical," "seamless," "bespoke," "proven track record," "high-stakes," "end-to-end"
+- Use "fostering" (banned word)
+- Use hedging language ("as needed," "when needed," "led or supported")
+- Use em-dashes for clauses (use commas instead)
+- Use generic corporate speak
+
+---
+
+## 📄 Core Content
+
+### Hero Text
+**Title:** Nathan Finkel  
+**Subtitle:** Musician · Technologist · Facilitator  
+**Tagline:** Brighton-based explorer of strange noises, participatory music, and interactive creative systems.
+
+### Project Summaries (used on circles/pages)
+
+| Project | One-liner |
+|---------|-----------|
+| Music | Synthesiser and guitar-based sets built around layered textures, found sound, and melodic improvisation. |
+| Workshops | Community-led music initiatives. Sound journeys, gentle improvisation, and 1-to-1 tuition. |
+| Technical | Hybrid events, streaming, and live sound. Senior Technical Producer at Splinter Faction since 2020. |
+| Glia | Neural network instrument. Real-time AI rhythm and harmony engines integrated into live performance. |
+| Morocco | Learning Gnaoua music in Essaouira. Tracing connections between Jewish and Gnaoua traditions. |
+
+---
+
+## 🔗 Links & Social
+
+- **SoundCloud**: https://soundcloud.com/nathan-finkel
+- **Instagram**: https://instagram.com/nathan_finkel_music
+- **Email**: hello@nathanfinkel.com
+
+---
+
+## 📝 How to Update
+
+### Add/edit events
+See `docs/HOW-TO-UPDATE-EVENTS.md` — edit `assets/events.json`
+
+### Edit project pages
+Each page (`music.html`, `workshops.html`, etc.) is a simple skeleton. Add content directly to HTML.
+
+### Change styles
+All styles in `assets/styles.css`. Key sections:
+- Atlas grid layout (homepage circles)
+- Simple pages (project/contact pages)
+- Shows page (filters, event cards)
+
+### Test locally
+```bash
+cd music-website
+python3 -m http.server 8888
+# Open http://localhost:8888
+```
+
+---
+
+## ✅ Completed (Jan 21, 2026)
+
+1. ✅ Consolidated all bios into context.md
+2. ✅ Built minimal index.html with central card + circles
+3. ✅ Created warm CSS palette
+4. ✅ Built skeleton project pages (music, workshops, technical, glia, morocco)
+5. ✅ Built contact page
+6. ✅ Rebuilt shows.html with new styling
+7. ✅ Circles link to project pages
+
+---
+
+*This is the single source of truth for all website content, design direction, and tone of voice.*
