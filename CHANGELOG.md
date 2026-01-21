@@ -10,14 +10,46 @@ and this project adheres to semantic versioning principles.
 ## [Unreleased]
 
 ### Planned
-- Add real SoundCloud/YouTube embeds for all project placeholders
+- Add remaining SoundCloud/YouTube embeds for project placeholders
 - Populate events.json with upcoming shows
-- Add GLIA performance media from December 2025 UK tour
 - Add Synths & Stories performance recordings
 - Add House Band and workshop video footage
 - Cross-browser and cross-device testing
 - Accessibility audit (WCAG compliance)
 - Performance optimization (lazy loading, minification)
+
+---
+
+## [2026-01-20 - Late Evening] Media Embeds & Bio Polish
+
+### Added
+- **GLIA SoundCloud embed** — "Just the Ending" with Mark Claydon & Nathan Finkel
+  - Real performance recording from December 2025 UK shows
+  - Mint/green player color (#78ffb4) matching GLIA branding
+  - Replaces placeholder in GLIA section
+- **Lockdown Streams playlist** — COVID-era daily improvised sessions
+  - SoundCloud playlist embed: "Lockdown Streams - Selection I"
+  - Added to COVID Streams card in Workshops & Facilitation section
+  - Purple player color (#b496ff) matching facilitation theme
+
+### Changed
+- **Bio page copy refresh** — Updated hero and main bio text
+  - More grounded first-person voice throughout
+  - Expanded professional background details
+  - Enhanced Morocco/Gnaoua narrative
+- **Bio page UX** — Removed scroll control buttons (up/down arrows)
+  - Cleaner single-page experience
+  - Simplified navigation for bio content
+- **Contact page spacing** — Adjusted "Get in touch" section margin
+  - Negative margin (-40px) to ensure CTA visible on page load
+  - Improved call-to-action visibility
+
+### Files Modified
+- `index.html` — Added GLIA and Lockdown Streams embeds
+- `bio.html` — Copy refresh, removed scroll controls
+- `contact.html` — Spacing adjustment
+- `CHANGELOG.md` — This entry
+- `context.md` — Updated with completed media embeds
 
 ---
 
@@ -194,4 +226,4 @@ and this project adheres to semantic versioning principles.
 
 ---
 
-**Last Updated**: January 20, 2026
+**Last Updated**: January 20, 2026 (late evening)

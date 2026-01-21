@@ -1,6 +1,6 @@
 # Music Website — Context
 
-**Last Updated**: January 20, 2026 | **Status**: Core structure finalized, bio updated, design locked in
+**Last Updated**: January 20, 2026 (late evening) | **Status**: Core structure finalized, bio polished, media embeds in progress
 
 ## Live site
 - **GitHub Pages URL**: `https://nathanfinkel86.github.io/website/`
@@ -89,13 +89,24 @@ Then open `http://localhost:8000`.
 - ✅ Cleaned up commented-out code for production
 - ✅ Added Splinter Faction Senior Technical Producer role
 - ✅ Expanded Morocco section with personal heritage story
+- ✅ Added GLIA SoundCloud embed — "Just the Ending" with Mark Claydon
+- ✅ Added Lockdown Streams playlist to COVID Streams section
+- ✅ Bio page polish — copy refresh and removed scroll controls
+- ✅ Contact page UX — improved CTA visibility
+
+## Media embeds status
+- ✅ Ambient section: London Night Cafe (audio + video), New Year's Day 2025 (audio + video)
+- ✅ GLIA section: "Just the Ending" (audio)
+- ✅ Workshops section: Lockdown Streams playlist (audio)
+- ⏳ Professional section: House Band performance video (placeholder)
+- ⏳ Synths & Stories section: Performance recordings (placeholder)
+- ⏳ Morocco section: Field recordings (placeholder)
 
 ## Next edits you'll probably want
-- Add real media to placeholder embeds (SoundCloud/YouTube URLs)
+- Add remaining media embeds (House Band, Synths & Stories, Morocco)
 - Populate "Upcoming shows" with real events in `events.json`
-- Add recordings from Synths & Stories performances
-- Add GLIA performance media from December 2025 UK tour
 - Test across devices (mobile/tablet/desktop) — especially hero background positioning
+- Consider adding photo gallery or press kit page
 
 ## See also
 - `TODO.md` — Comprehensive task list with priorities and status tracking
