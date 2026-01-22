@@ -393,48 +393,79 @@ body.page footer {
 /* Responsive
    ========================================================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .atlas {
-    grid-template-columns: 120px 280px 120px;
-    grid-template-rows: 120px auto 120px;
-    gap: 20px;
+    grid-template-columns: 100px 240px 100px;
+    grid-template-rows: 100px auto 100px;
+    gap: 16px;
   }
   
   .circle {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
+    padding: 12px;
+  }
+  
+  .circle h2 {
+    font-size: 14px;
+  }
+  
+  .circle-icon {
+    font-size: 16px;
+    margin-bottom: 4px;
   }
   
   .title-card {
-    padding: 32px 24px;
+    padding: 24px 20px;
   }
   
   .title-card h1 {
-    font-size: 32px;
+    font-size: 28px;
+  }
+  
+  .title-card .subtitle {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .title-card .tagline {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  
+  .title-card nav {
+    font-size: 12px;
+    gap: 10px;
   }
 }
 
 @media (max-width: 600px) {
+  body {
+    padding: 16px;
+    background-size: 150%;
+    background-position: center 30%;
+  }
+  
   .atlas {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 16px;
   }
   
   .title-card {
-    grid-column: 1 / -1;
     order: -1;
+    width: 100%;
+    max-width: 320px;
   }
   
   .circle {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
+    width: 100px;
+    height: 100px;
   }
   
-  .circle-5 {
-    grid-column: 1 / -1;
-    width: 140px;
-    justify-self: center;
+  /* Hide circles on very small screens, rely on nav */
+  .circle {
+    display: none;
   }
 }
