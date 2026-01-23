@@ -1,7 +1,6 @@
 # Music Website — Context & Source of Truth
 
-**Last Updated**: January 21, 2026  
-**Status**: Live — Central layout with ornamental circles
+**Last Updated**: January 21, 2026
 
 ---
 
@@ -16,9 +15,9 @@ Simple, warm, inviting website for Nathan Finkel's music and creative work. Focu
 Brighton-based musician and technologist exploring strange noises, participatory music, and interactive creative systems. Over 25 years in musicianship, performance, facilitation, and technical production.
 
 ### Core Identity
-- **Music**: Ambient/electronic performance, guitar/bass/drums/synths, improvisation
+- **Music**: Ambient/electronic performance, guitar/bass/drums/synths, improvisation, sound design
 - **Facilitation**: Community workshops, inclusive music-making, accessibility-focused
-- **Technical**: Streaming production, live sound, event technical direction
+- **Technical**: Streaming production, live sound, event technical direction, audio editing, sound design
 - **Creative Tech**: GLIA (neural network instrument), hybrid analogue/digital rigs
 - **Cultural**: Moroccan Jewish heritage, learning Gnaoua music in Essaouira
 
@@ -29,32 +28,8 @@ Brighton-based musician and technologist exploring strange noises, participatory
 - **The Borderland** — Jam Camp Lead (8 years, 2 years as Lead)
 - **GLIA** — Collaborator (2023-present)
 
----
-
-## 🎨 Design Aesthetic
-
-**Current Design**: Central card layout with ornamental project circles
-
-### Visual Direction
-- Warm cream background (#FAF7F2)
-- Name centered, projects as circles arranged around it
-- Cormorant Garamond + Crimson Text typography
-- Minimal layout with breathing room
-- Ornamental double-border circles with color accents
-- No dark mode, no tech startup vibes
-
-### Color Palette
-```css
---bg: #FAF7F2;          /* Cream background */
---text: #3A3530;        /* Dark warm grey */
---muted: #6B635A;       /* Muted text */
---border: #E5DED4;      /* Subtle borders */
---terracotta: #C17A5B;  /* Primary accent */
---gold: #C9A855;        /* Secondary accent */
---sage: #7A9F8E;        /* Workshops */
---dusty-rose: #B89999;  /* Glia */
---ocean: #5B8A9A;       /* Technical */
-```
+### Recent Work
+- **London Decompression 2025** — Created a 3-minute audio sound design piece for a set piece performance at the Burning Man event. Remixed classical music with synthesisers and voice acting (recorded on iPad in Morocco) to provide narrative flow. Combined iPad synths with voice acting recorded in Morocco.
 
 ---
 
@@ -63,7 +38,7 @@ Brighton-based musician and technologist exploring strange noises, participatory
 ### Pages
 | File | Purpose |
 |------|---------|
-| `index.html` | Home — central name card with project circles |
+| `index.html` | Home |
 | `music.html` | Music project page |
 | `workshops.html` | Workshops project page |
 | `technical.html` | Technical production page |
@@ -143,12 +118,6 @@ See `docs/HOW-TO-UPDATE-EVENTS.md` — edit `assets/events.json`
 ### Edit project pages
 Each page (`music.html`, `workshops.html`, etc.) is a simple skeleton. Add content directly to HTML.
 
-### Change styles
-All styles in `assets/styles.css`. Key sections:
-- Atlas grid layout (homepage circles)
-- Simple pages (project/contact pages)
-- Shows page (filters, event cards)
-
 ### Test locally
 ```bash
 cd music-website
@@ -158,16 +127,4 @@ python3 -m http.server 8888
 
 ---
 
-## ✅ Completed (Jan 21, 2026)
-
-1. ✅ Consolidated all bios into context.md
-2. ✅ Built minimal index.html with central card + circles
-3. ✅ Created warm CSS palette
-4. ✅ Built skeleton project pages (music, workshops, technical, glia, morocco)
-5. ✅ Built contact page
-6. ✅ Rebuilt shows.html with new styling
-7. ✅ Circles link to project pages
-
----
-
-*This is the single source of truth for all website content, design direction, and tone of voice.*
+*This is the single source of truth for all website content and tone of voice.*

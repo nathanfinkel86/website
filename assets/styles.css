@@ -68,12 +68,24 @@ a:hover {
   grid-column: 2;
   grid-row: 2;
   text-align: center;
-  padding: 36px 32px;
-  background: rgba(255, 255, 255, 0.7);
+  width: 280px;
+  height: 280px;
+  padding: 40px 24px;
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(229, 222, 212, 0.8);
-  border-radius: 8px;
+  border-radius: 0;
   box-shadow: 0 4px 20px rgba(58, 53, 48, 0.1);
+  transform: rotate(45deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-card-inner {
+  transform: rotate(-45deg);
+  width: 100%;
 }
 
 .title-card h1 {
@@ -107,6 +119,10 @@ a:hover {
   justify-content: center;
   gap: 16px;
   font-size: 14px;
+}
+
+.title-card nav .projects-link {
+  display: none;
 }
 
 .title-card nav span {
@@ -289,14 +305,17 @@ body.page footer {
 
 /* Bio Portraits */
 .bio-portraits {
-  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex; 
   gap: 16px;
   margin-bottom: 32px;
+  opacity: 0.85;
 }
 
 .bio-portraits img {
-  width: 120px;
-  height: 120px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid var(--border);
@@ -349,25 +368,44 @@ body.page footer {
 
 .event-card {
   display: flex;
-  gap: 20px;
-  padding: 20px 0;
+  gap: 40px;
+  padding: 20px 30px;
   border-bottom: 1px solid var(--border);
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(235, 223, 201, 0.5);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 20px;
 }
 
 .event-card:first-child {
-  padding-top: 0;
+  padding-top: 10;
 }
 
 .event-date {
   font-size: 14px;
   color: var(--muted);
   min-width: 90px;
+  position: relative;
+  z-index: 1;
 }
 
 .event-info {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  position: relative;
+  z-index: 1;
 }
 
 .event-info strong {
@@ -385,17 +423,12 @@ body.page footer {
   margin-top: 4px;
 }
 
-.muted {
-  color: var(--muted);
-  font-style: italic;
-}
-
 /* Responsive
    ========================================================================== */
 
 @media (max-width: 900px) {
   .atlas {
-    grid-template-columns: 100px 240px 100px;
+    grid-template-columns: 100px 220px 100px;
     grid-template-rows: 100px auto 100px;
     gap: 16px;
   }
@@ -416,34 +449,36 @@ body.page footer {
   }
   
   .title-card {
-    padding: 24px 20px;
+    width: 220px;
+    height: 220px;
+    padding: 30px 20px;
   }
   
   .title-card h1 {
-    font-size: 28px;
+    font-size: 24px;
   }
   
   .title-card .subtitle {
-    font-size: 10px;
-    margin-bottom: 12px;
+    font-size: 9px;
+    margin-bottom: 10px;
   }
   
   .title-card .tagline {
-    font-size: 14px;
-    margin-bottom: 14px;
+    font-size: 12px;
+    margin-bottom: 12px;
   }
   
   .title-card nav {
-    font-size: 12px;
-    gap: 10px;
+    font-size: 11px;
+    gap: 8px;
   }
 }
 
 @media (max-width: 600px) {
   body {
     padding: 16px;
-    background-size: 150%;
-    background-position: center 30%;
+    background-size: cover;
+    background-position: center center;
   }
   
   .atlas {
@@ -457,14 +492,41 @@ body.page footer {
     order: -1;
     width: 100%;
     max-width: 320px;
+    height: auto;
+    transform: none;
+    border-radius: 8px;
+    padding: 32px 24px;
   }
   
-  .circle {
-    width: 100px;
-    height: 100px;
+  .title-card-inner {
+    transform: none;
   }
   
-  /* Hide circles on very small screens, rely on nav */
+  .title-card h1 {
+    font-size: 28px;
+  }
+  
+  .title-card .subtitle {
+    font-size: 11px;
+    margin-bottom: 14px;
+  }
+  
+  .title-card .tagline {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  
+  .title-card nav {
+    font-size: 13px;
+    gap: 12px;
+  }
+  
+  /* Show projects link on mobile when circles are hidden */
+  .title-card nav .projects-link {
+    display: inline;
+  }
+  
+  /* Hide circles on mobile, rely on nav */
   .circle {
     display: none;
   }
