@@ -212,17 +212,18 @@ a:hover {
 
 footer {
   position: fixed;
-  bottom: 20px;
+  bottom: 16px;
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 13px;
+  font-size: 11px;
   color: var(--muted);
+  opacity: 0.7;
 }
 
 footer a {
   color: var(--muted);
-  margin: 0 10px;
+  margin: 0 4px;
 }
 
 footer a:hover {
@@ -230,7 +231,7 @@ footer a:hover {
 }
 
 footer span {
-  margin: 0 16px;
+  margin: 0 6px;
   opacity: 0.4;
 }
 
@@ -238,13 +239,17 @@ footer span {
    ========================================================================== */
 
 body.page {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   padding: 80px 40px;
 }
 
 .page-content {
   max-width: 600px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .back {
