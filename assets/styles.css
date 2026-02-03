@@ -276,9 +276,13 @@ body.page {
 }
 
 body.page footer {
+  position: relative;
   max-width: 600px;
   margin: 60px auto 0;
   text-align: left;
+  bottom: auto;
+  left: auto;
+  right: auto;
 }
 
 /* Project List */
@@ -308,17 +312,19 @@ body.page footer {
   align-items: center;
   justify-content: center;
   display: flex; 
-  gap: 16px;
+  gap: 12px;
   margin-bottom: 32px;
   opacity: 0.85;
 }
 
 .bio-portraits img {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
+  aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid var(--border);
+  display: block;
 }
 
 /* Shows Page

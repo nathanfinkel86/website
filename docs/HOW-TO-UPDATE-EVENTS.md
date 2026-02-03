@@ -116,7 +116,7 @@ to:
     "date": "2026-03-15",
     "venue": "The Dome",
     "location": "London, UK",
-    "description": "Ambient electronic set with Glia live improvisation.",
+    "description": "Ambient electronic set with GLIA live improvisation.",
     "tags": ["ambient", "glia"],
     "ticketUrl": "https://dandelion.events/nathanfinkelmusic/spring",
     "status": "upcoming",

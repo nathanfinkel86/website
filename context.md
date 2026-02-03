@@ -42,7 +42,7 @@ Brighton-based musician and technologist exploring strange noises, participatory
 | `music.html` | Music project page |
 | `workshops.html` | Workshops project page |
 | `technical.html` | Technical production page |
-| `glia.html` | Glia neural network page |
+| `glia.html` | GLIA neural network page |
 | `morocco.html` | Morocco/Gnaoua project page |
 | `contact.html` | Contact info |
 | `shows.html` | Events calendar with filtering |
@@ -58,7 +58,7 @@ Brighton-based musician and technologist exploring strange noises, participatory
 | File | Purpose |
 |------|---------|
 | `context.md` | This file — source of truth |
-| `CONTENT-ARCHIVE.md` | Previous site content backup |
+| `CONTENT-ARCHIVE.md` | Previous site content backup | Use for fleshing out sections.
 | `REDESIGN-SUMMARY.md` | Notes from Jan 21 redesign |
 | `docs/HOW-TO-UPDATE-EVENTS.md` | Shows page update instructions |
 
@@ -97,7 +97,7 @@ Brighton-based musician and technologist exploring strange noises, participatory
 | Music | Synthesiser and guitar-based sets built around layered textures, found sound, and melodic improvisation. |
 | Workshops | Community-led music initiatives. Sound journeys, gentle improvisation, and 1-to-1 tuition. |
 | Technical | Hybrid events, streaming, and live sound. Senior Technical Producer at Splinter Faction since 2020. |
-| Glia | Neural network instrument. Real-time AI rhythm and harmony engines integrated into live performance. |
+| GLIA | Neural network instrument. Real-time AI rhythm and harmony engines integrated into live performance. |
 | Morocco | Learning Gnaoua music in Essaouira. Tracing connections between Jewish and Gnaoua traditions. |
 
 ---

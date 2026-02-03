@@ -22,7 +22,7 @@
       <button class="filter active" data-filter="all">All</button>
       <button class="filter" data-filter="ambient">Music</button>
       <button class="filter" data-filter="facilitation">Workshops</button>
-      <button class="filter" data-filter="glia">Glia</button>
+      <button class="filter" data-filter="glia">GLIA</button>
     </div>
 
     <!-- Upcoming -->
@@ -53,7 +53,7 @@
     fetch('assets/events.json')
       .then(r => r.json())
       .then(events => {
-        allEvents = events;
+        allEvents = events.filter(e => e.status !== 'hidden');
         render();
       });
 

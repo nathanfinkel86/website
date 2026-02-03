@@ -47,7 +47,7 @@ Over 20 years of professional work across performance, stage management, venue m
    High-pressure live session work with visiting artists across genres, plus outreach through structured jam workshops for mixed-ability groups.
 
 3. **Borderland 2025 - Jam Camp Musical Director**
-   Coordinated a large-scale improvised performance for the main burn, supporting first-time performers within the Burning Man community.
+   Coordinated a large-scale improvised performance for the main fire spectacle event, supporting first-time performers within the Burning Man community.
 
 ---
 
@@ -72,7 +72,7 @@ Professional technical production and AV services for hybrid events, streaming, 
 
 ---
 
-## Glia
+## GLIA
 
 **Short description:**
 Neural-network instrument environment for generative sound design and real-time musical collaboration with AI.
@@ -163,7 +163,7 @@ Contact form at https://formspree.io/f/mnjjngal
 3. **For technical production**
    Event type, date, venue details, technical requirements, and streaming needs.
 
-4. **For Glia / creative tech**
+4. **For GLIA / creative tech**
    Integration ideas, collaboration opportunities, or technical questions.
 
 5. **Anything else**
@@ -180,5 +180,5 @@ Contact form at https://formspree.io/f/mnjjngal
 - **Music**: assets/images/performances/nathan-ambient-show-1.1.jpg
 - **Workshops**: assets/images/performances/img-3127.jpg
 - **Technical**: assets/images/performances/nathan-festival-performance-1.jpg
-- **Glia**: assets/images/performances/img-2912.jpeg
+- **GLIA**: assets/images/performances/img-2912.jpeg
 - **Morocco**: assets/images/performances/img-4292-web.jpg
